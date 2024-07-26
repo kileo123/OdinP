@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --topnav-bg-color: #1F2937;
+  --topbanner-bg-color: #1F2937;
+  --article-bg-color: ghostwhite;
+  --quotes-bg-color: #E5E7EB;
+  --botbanner-bg-color: ghostwhite;
+  --footer-bg-color: #1F2937;
+  --main-text-color: #F9FAF8;
+  --secondary-text-color: #E5E7EB;
+  --button-color: #3882F6;
+  --quotes-text-color: #1F2937;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+div{
+  width: 100%;
+}
+
+/*================ TOP NAVIGATION BAR ================*/
+
+.topnavbar{
+  background-color: var(--topnav-bg-color);
+  color: var(--main-text-color);
+  display: flex;
+}
+
+.topnavbar .logo {
+  margin-left: 10%;
+  justify-self: start;
+  align-self: center;
+}
+
+.topnavbar .navmenu {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--secondary-text-color);
+  margin-right: 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.topnavbar .navmenu ul {
+  list-style-type: none;
+  margin-top: 0.5rem;
+}
+
+.topnavbar .navmenu ul li {
+  margin-left: 1rem;
+  float: left;
+}
+
+/*================ TOP BANNER ================*/
+
+.topbanner{
+  background-color: var(--topbanner-bg-color);
+  color: var(--main-text-color);
+  display: flex;
+  padding: 2rem 0 4rem 0;
+}
+
+.topbanner .textarea{
+  margin-left: 10%;
+}
+
+.topbanner .textarea .mainherotext{
+  font-size: 48px;
+  font-weight: 900;
+}
+
+.topbanner .textarea .secondarytext{
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--secondary-text-color);
+}
+
+.topbanner .textarea button{
+  background-color: var(--button-color);
+  color: var(--main-text-color);
+  border: none;
+  border-radius: 5px;
+  padding: 4px 32px;
+  font-weight: 900;
+}
+
+.topbanner .picarea{
+  display: flex;
+  margin-right: 10%;
+  align-content: center;
+  justify-content: flex-end;
+}
+
+/*================ MAIN ARTICLES ================*/
+
+.articles{
+  background-color: var(--article-bg-color);
+  color: var(--quotes-text-color);
+  justify-content: center;
+  padding: 2rem 0;
+  align-items: center;
+}
+
+.articles .titlearea{
+  font-size: 36px;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.articles .card-container{
+  max-width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.articles .card-container .cards{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width:220px;
+  justify-items: center;
+}
+
+.articles .card-container .cards .cardimg{
+  border: 2px solid var(--button-color);
+  display: flex;
+  border-radius: 10px;
+  max-width:200px;
+  padding: 5px;
+  justify-content: center;
+}
+
+.articles .card-container .cards .cardtext{
+  border: 2px solid var(--article-bg-color);
+  border-radius: 10px;
+  max-width:200px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  justify-self: center;
+  text-align: center;
+}
+
+/*================ QUOTES ================*/
+
+.quotes{
+  background-color: var(--quotes-bg-color);
+  color: var(--quotes-text-color);
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.quotes .quote{
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
+  display: flex;
+  width: 550px;
+  margin: auto;
+}
+
+.quotes .source{
+  width: 550px;
+  margin: auto;
+  font-size: 16px;
+  font-weight: 900;
+  text-align: right;
+}
+
+/*================ BOTTOM BANNER ================*/
+
+.botbanner{
+  background-color: var(--botbanner-bg-color);
+  color: var(--main-text-color);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.botbanner .CTAcontainer{
+  border: none;
+  width: 760px;
+  margin: auto;
+  padding: 2rem 4rem;
+  background-color: var(--button-color);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.botbanner .CTAcontainer .CTA{
+  min-width: 70%;
+}
+
+
+.botbanner .CTAcontainer .CTA .CTAtext{
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.botbanner .CTAcontainer .CTAbutton {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.botbanner .CTAcontainer button {
+  background-color: var(--button-color);
+  color: var(--main-text-color);
+  border: 1px solid var(--main-text-color);
+  border-radius: 5px;
+  padding: 4px 32px;
+  font-weight: 900;
+}
+
+/*================ FOOTER ================*/
+
+.footer{
+  background-color: var(--footer-bg-color);
+  color: var(--main-text-color);
+  font-size: 24px;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
