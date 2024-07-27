@@ -46,7 +46,7 @@ div{
     margin-right: 10%;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
   }
   .topnavbar .navmenu ul {
     list-style-type: none;
