@@ -28,39 +28,102 @@ div{
 
 /*================ TOP NAVIGATION BAR ================*/
 
+@media screen and (min-width: 800px) {
+  .topnavbar{
+    background-color: var(--topnav-bg-color);
+    color: var(--main-text-color);
+    display: flex;
+  }
+  .topnavbar .logo {
+    margin-left: 10%;
+    justify-self: start;
+    align-self: center;
+  }
+  .topnavbar .navmenu {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--secondary-text-color);
+    margin-right: 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .topnavbar .navmenu ul {
+    list-style-type: none;
+    margin-top: 0.5rem;
+  }
+  .topnavbar .navmenu ul li {
+    margin-left: 1rem;
+    float: left;
+  }
+}
+
 .topnavbar{
   background-color: var(--topnav-bg-color);
   color: var(--main-text-color);
   display: flex;
+  padding-top: 0.5rem;
 }
-
 .topnavbar .logo {
-  margin-left: 10%;
+  max-width: 40%;
+  font-size: 24px;
+  margin-left: 5%;
   justify-self: start;
-  align-self: center;
+  align-self: flex-end;
 }
-
 .topnavbar .navmenu {
-  font-size: 18px;
   font-weight: 400;
   color: var(--secondary-text-color);
-  margin-right: 10%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  margin-right: 5%;
 }
-
 .topnavbar .navmenu ul {
+  font-size: 12px;
   list-style-type: none;
-  margin-top: 0.5rem;
+  display: flex;
+  justify-self: flex-end;
+  align-items: flex-end;
 }
-
 .topnavbar .navmenu ul li {
-  margin-left: 1rem;
+  margin-left: 0.6rem;
   float: left;
 }
 
 /*================ TOP BANNER ================*/
+
+@media screen and (min-width: 800px) {
+  .topbanner{
+    background-color: var(--topbanner-bg-color);
+    color: var(--main-text-color);
+    display: flex;
+    padding: 2rem 0 4rem 0;
+  }
+  .topbanner .textarea{
+    margin-left: 10%;
+  }
+  .topbanner .textarea .mainherotext{
+    font-size: 48px;
+    font-weight: 900;
+  }
+  .topbanner .textarea .secondarytext{
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--secondary-text-color);
+  }
+  .topbanner .textarea button{
+    background-color: var(--button-color);
+    color: var(--main-text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 4px 32px;
+    font-weight: 900;
+  }
+  .topbanner .picarea{
+    display: flex;
+    margin-right: 10%;
+    align-content: center;
+    justify-content: flex-end;
+  }
+}
 
 .topbanner{
   background-color: var(--topbanner-bg-color);
@@ -68,39 +131,88 @@ div{
   display: flex;
   padding: 2rem 0 4rem 0;
 }
-
 .topbanner .textarea{
-  margin-left: 10%;
+  max-width: 45%;
+  margin-left: 5%;
+  padding-right: 1rem; 
 }
-
 .topbanner .textarea .mainherotext{
-  font-size: 48px;
+  font-size: 32px;
   font-weight: 900;
 }
-
 .topbanner .textarea .secondarytext{
   font-size: 18px;
   font-weight: 400;
   color: var(--secondary-text-color);
 }
-
 .topbanner .textarea button{
   background-color: var(--button-color);
   color: var(--main-text-color);
   border: none;
   border-radius: 5px;
+  margin-top: 0.5rem;
   padding: 4px 32px;
+  font-size: 16px;
   font-weight: 900;
 }
-
 .topbanner .picarea{
   display: flex;
-  margin-right: 10%;
-  align-content: center;
-  justify-content: flex-end;
+  margin-right: 5%;
+  align-self: start;
+  justify-self: flex-start;
+}
+.topbanner .picarea img{
+  width: 100%;
+  height: auto;
 }
 
 /*================ MAIN ARTICLES ================*/
+
+@media screen and (min-width: 800px) {
+  .articles{
+    background-color: var(--article-bg-color);
+    color: var(--quotes-text-color);
+    justify-content: center;
+    padding: 2rem 0;
+    align-items: center;
+  }
+  .articles .titlearea{
+    font-size: 36px;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+  .articles .card-container{
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .articles .card-container .cards{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width:220px;
+    justify-items: center;
+  }
+  .articles .card-container .cards .cardimg{
+    border: 2px solid var(--button-color);
+    display: flex;
+    border-radius: 10px;
+    max-width:200px;
+    padding: 5px;
+    justify-content: center;
+  }
+  .articles .card-container .cards .cardtext{
+    border: 2px solid var(--article-bg-color);
+    border-radius: 10px;
+    max-width:200px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    justify-self: center;
+    text-align: center;
+  }
+}
 
 .articles{
   background-color: var(--article-bg-color);
@@ -109,20 +221,17 @@ div{
   padding: 2rem 0;
   align-items: center;
 }
-
 .articles .titlearea{
-  font-size: 36px;
+  font-size: 24px;
   text-align: center;
   padding-bottom: 1rem;
 }
-
 .articles .card-container{
   max-width: 80%;
   margin: auto;
   display: flex;
   justify-content: space-between;
 }
-
 .articles .card-container .cards{
   padding: 10px;
   display: flex;
@@ -130,7 +239,6 @@ div{
   max-width:220px;
   justify-items: center;
 }
-
 .articles .card-container .cards .cardimg{
   border: 2px solid var(--button-color);
   display: flex;
@@ -139,7 +247,10 @@ div{
   padding: 5px;
   justify-content: center;
 }
-
+.articles .card-container .cards img{
+  width: 100%;
+  height: auto;
+}
 .articles .card-container .cards .cardtext{
   border: 2px solid var(--article-bg-color);
   border-radius: 10px;
@@ -151,7 +262,35 @@ div{
   text-align: center;
 }
 
+
 /*================ QUOTES ================*/
+
+@media screen and (min-width: 800px) {
+  .quotes{
+    background-color: var(--quotes-bg-color);
+    color: var(--quotes-text-color);
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .quotes .quote{
+    font-size: 24px;
+    font-weight: 300;
+    font-style: italic;
+    display: flex;
+    width: 550px;
+    margin: auto;
+  }
+  .quotes .source{
+    width: 550px;
+    margin: auto;
+    font-size: 16px;
+    font-weight: 900;
+    text-align: right;
+  }
+}
 
 .quotes{
   background-color: var(--quotes-bg-color);
@@ -162,19 +301,18 @@ div{
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
-
 .quotes .quote{
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 300;
   font-style: italic;
   display: flex;
-  width: 550px;
+  max-width: 80%;
   margin: auto;
 }
-
 .quotes .source{
-  width: 550px;
+  max-width: 80%;
   margin: auto;
+  padding-top: 0.5rem;
   font-size: 16px;
   font-weight: 900;
   text-align: right;
@@ -182,55 +320,98 @@ div{
 
 /*================ BOTTOM BANNER ================*/
 
+@media screen and (min-width: 800px) {
+  .botbanner{
+    background-color: var(--botbanner-bg-color);
+    color: var(--main-text-color);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .botbanner .CTAcontainer{
+    border: none;
+    width: 760px;
+    margin: auto;
+    padding: 2rem 4rem;
+    background-color: var(--button-color);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .botbanner .CTAcontainer .CTA{
+    min-width: 70%;
+  }
+  .botbanner .CTAcontainer .CTA .CTAtext{
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .botbanner .CTAcontainer .CTAbutton {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  .botbanner .CTAcontainer button {
+    background-color: var(--button-color);
+    color: var(--main-text-color);
+    border: 1px solid var(--main-text-color);
+    border-radius: 5px;
+    padding: 4px 32px;
+    font-weight: 900;
+  }
+}
+
 .botbanner{
   background-color: var(--botbanner-bg-color);
   color: var(--main-text-color);
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-
 .botbanner .CTAcontainer{
   border: none;
-  width: 760px;
+  max-width: 80%;
   margin: auto;
-  padding: 2rem 4rem;
+  padding: 1rem 2rem;
   background-color: var(--button-color);
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
 }
-
 .botbanner .CTAcontainer .CTA{
-  min-width: 70%;
+  max-width: 70%;
 }
-
-
+.botbanner .CTAcontainer .CTA .CTAtitle{
+  font-size: 24px;
+}
 .botbanner .CTAcontainer .CTA .CTAtext{
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
 }
-
 .botbanner .CTAcontainer .CTAbutton {
   display: flex;
+  max-width: 25%;
   justify-content: end;
   align-items: center;
 }
-
 .botbanner .CTAcontainer button {
   background-color: var(--button-color);
   color: var(--main-text-color);
   border: 1px solid var(--main-text-color);
   border-radius: 5px;
-  padding: 4px 32px;
+  /* padding: 4px 32px; */
   font-weight: 900;
 }
 
+
 /*================ FOOTER ================*/
 
+@media screen and (min-width: 800px) {
+  .footer{
+    font-size: 24px;
+  }
+}
 .footer{
   background-color: var(--footer-bg-color);
   color: var(--main-text-color);
-  font-size: 24px;
+  font-size: 14px;
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
