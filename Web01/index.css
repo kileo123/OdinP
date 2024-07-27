@@ -28,7 +28,7 @@ div{
 
 /*================ TOP NAVIGATION BAR ================*/
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 640px) {
   .topnavbar{
     background-color: var(--topnav-bg-color);
     color: var(--main-text-color);
@@ -90,7 +90,7 @@ div{
 
 /*================ TOP BANNER ================*/
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 640px) {
   .topbanner{
     background-color: var(--topbanner-bg-color);
     color: var(--main-text-color);
@@ -168,7 +168,7 @@ div{
 
 /*================ MAIN ARTICLES ================*/
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 640px) {
   .articles{
     background-color: var(--article-bg-color);
     color: var(--quotes-text-color);
@@ -189,28 +189,17 @@ div{
   }
   .articles .card-container .cards{
     padding: 10px;
-    display: flex;
-    flex-direction: column;
-    max-width:220px;
-    justify-items: center;
+    max-width:80%;
   }
   .articles .card-container .cards .cardimg{
-    border: 2px solid var(--button-color);
-    display: flex;
-    border-radius: 10px;
-    max-width:200px;
-    padding: 5px;
-    justify-content: center;
+    max-width: 90%;
+    padding: 10px;
   }
   .articles .card-container .cards .cardtext{
-    border: 2px solid var(--article-bg-color);
-    border-radius: 10px;
-    max-width:200px;
+    max-width: 90%;
     padding: 10px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
-    justify-self: center;
-    text-align: center;
   }
 }
 
@@ -227,24 +216,24 @@ div{
   padding-bottom: 1rem;
 }
 .articles .card-container{
-  max-width: 80%;
+  max-width: 90%;
   margin: auto;
   display: flex;
   justify-content: space-between;
 }
 .articles .card-container .cards{
-  padding: 10px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
-  max-width:220px;
+  max-width: 90%;
   justify-items: center;
 }
 .articles .card-container .cards .cardimg{
   border: 2px solid var(--button-color);
   display: flex;
   border-radius: 10px;
-  max-width:200px;
-  padding: 5px;
+  max-width: 95%;
+  padding: 3px;
   justify-content: center;
 }
 .articles .card-container .cards img{
@@ -254,9 +243,9 @@ div{
 .articles .card-container .cards .cardtext{
   border: 2px solid var(--article-bg-color);
   border-radius: 10px;
-  max-width:200px;
-  padding: 10px;
-  font-size: 16px;
+  max-width: 95%;
+  padding: 3px;
+  font-size: 14px;
   font-weight: 400;
   justify-self: center;
   text-align: center;
@@ -265,7 +254,7 @@ div{
 
 /*================ QUOTES ================*/
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 640px) {
   .quotes{
     background-color: var(--quotes-bg-color);
     color: var(--quotes-text-color);
@@ -320,7 +309,7 @@ div{
 
 /*================ BOTTOM BANNER ================*/
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 640px) {
   .botbanner{
     background-color: var(--botbanner-bg-color);
     color: var(--main-text-color);
@@ -396,14 +385,13 @@ div{
   color: var(--main-text-color);
   border: 1px solid var(--main-text-color);
   border-radius: 5px;
-  /* padding: 4px 32px; */
+  padding: 4px 32px;
   font-weight: 900;
 }
 
-
 /*================ FOOTER ================*/
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 640px) {
   .footer{
     font-size: 24px;
   }
