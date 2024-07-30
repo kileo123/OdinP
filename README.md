@@ -6,7 +6,7 @@ Hello Odin!
 ### July 30th
 testing multiple credentials
 - [x] windows
-- [ ] linux
+- [x] linux
 ### July 26th
 Created Web01 web
 ### July 25th
