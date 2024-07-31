@@ -9,6 +9,7 @@ Created [Web02](/Web02) for Rock-Paper-Scissor game, no css
 testing multiple credentials
 - [x] windows
 - [x] linux
+- [x] linux desktop
 ### July 26th
 Created [Web01](/Web01) static responsive web
 ### July 25th
