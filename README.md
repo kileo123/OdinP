@@ -11,7 +11,7 @@ Created [Web02](https://kileo123.github.io/OdinP/Web02/) for Rock-Paper-Scissor 
 testing multiple credentials
 - [x] windows
 - [x] linux
-- [x] linux desktop
+- [x] linux laptop
 ### July 26th
 Created [Web01](https://kileo123.github.io/OdinP/Web01/) static responsive web
 ### July 25th
