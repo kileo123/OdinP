@@ -24,6 +24,22 @@ function play(bVal){
   var result = document.createTextNode(message)
   ul.appendChild(result)
   document.getElementById("result").appendChild(ul)
+  if (humanScore >= 5 || computerScore >= 5) {
+    document.getElementById('choiceButton1').style.visibility = 'hidden'
+    document.getElementById('choiceButton2').style.visibility = 'hidden'
+    document.getElementById('choiceButton3').style.visibility = 'hidden'
+    if (humanScore >= 5)  {
+      message = "Game END -- User get 5 WIN"
+    } else {
+      message = "Game END -- Computer get 5 WIN"
+    }
+    var ul = document.createElement("ul")
+    var result = document.createTextNode(message)
+    ul.style.color="green"
+    ul.style.fontWeight="bold"
+    ul.appendChild(result)
+    document.getElementById("result").appendChild(ul)
+  }
 }
 
 function getComputerChoice(){
