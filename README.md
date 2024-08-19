@@ -3,6 +3,11 @@ Hello Odin!
 
 ## 2024
 
+### Aug 19th
+Created new branch (rps-ui) 
+Update rock-paper-scissor game in rps-ui branch 
+- game now end after 5 win
+Merge rps-ui branch into main branch
 ### Aug 1st
 Added javascript exercise page in Web01 folder [Shopping Cart exercise](https://kileo123.github.io/OdinP/Web01/idx3.html)
 ### July 31st
