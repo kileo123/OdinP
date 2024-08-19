@@ -13,7 +13,7 @@ Hello Odin!
 ### July 31st
 - Created [Web02](https://kileo123.github.io/OdinP/Web02/) for Rock-Paper-Scissor game, no css
 ### July 30th
-- testing multiple credentials
+testing multiple credentials
 - [x] windows
 - [x] linux
 - [x] linux laptop
