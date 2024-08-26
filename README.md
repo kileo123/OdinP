@@ -3,6 +3,8 @@ Hello Odin!
 
 ## 2024
 
+### Aug 26th
+- Partially finished [Etch-a-Sketch Project](https://kileo123.github.io/OdinP/Web02/eas.html)
 ### Aug 19th
 - Created new branch (rps-ui) 
 - Update rock-paper-scissor game in rps-ui branch 

@@ -1,21 +1,28 @@
 // your JavaScript file
-const container = document.querySelector("#container");
-const content1 = document.createElement("div");
-content1.classList.add("content");
-content1.textContent = "This is the glorious text-content!";
-container.appendChild(content1);
+const container = document.querySelector("#container")
 
-const content2 = document.createElement("p");
-content2.textContent = "Hey I'm Red!"
-content2.style.color = "red"
-container.appendChild(content2);
+const div = document.createElement("div")
+div.classList.add("content")
+div.textContent = "This is the glorious text-content!"
+container.appendChild(div)
 
-const content3 = document.createElement("h3");
-content3.textContent = "I'm a blue h3"
-content3.style.color = "blue"
+const p = document.createElement("p")
+p.textContent = "Hey I'm Red!"
+p.style.color = "red"
+container.appendChild(p)
 
-const content4 = document.createElement("div");
-const c4node1 = document.createElement("div");
-c4node1.textContent = "aaa"
-content4.appendChild(c4node1)
-container.appendChild(content4)
+const h3 = document.createElement("h3")
+h3.textContent = "I'm a blue h3"
+h3.style.color = "blue"
+container.appendChild(h3)
+
+const div2 = document.createElement("div")
+div2.style.border = "1px solid black"
+div2.style.background = "pink"
+const h1 = document.createElement("h1")
+h1.textContent = "I'm in a div"
+div2.appendChild(h1)
+const p2 = document.createElement("p")
+p2.textContent = "Me TOO!!"
+div2.appendChild(p2)
+container.appendChild(div2)
