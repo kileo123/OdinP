@@ -13,50 +13,93 @@ body {
 }
 
 .calculator {
-  width: 300px;
+  width: 360px;
+  height: 500px;
   background-color: #333;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
-.display {
+.outputarea {
   background-color: #222;
   padding: 10px;
   border-radius: 5px;
   text-align: right;
 }
 
-.display input {
-  width: 100%;
-  font-size: 2rem;
-  background-color: transparent;
-  border: none;
-  color: white;
+.outputarea .resultdisplay{
+  border-bottom: 1px solid white;
+  background-color: #222;
+  color: whitesmoke;
+  padding: 10px;
   text-align: right;
+  font-size: 2.5rem;
 }
 
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-top: 20px;
+.outputarea .inputdisplay{
+  background-color: #222;
+  color: whitesmoke;
+  padding: 10px;
+  text-align: right;
+  font-size: 2.8rem;
+}
+ 
+.inputarea{
+  display: flex;
 }
 
-.btn {
-  padding: 20px;
-  background-color: #555;
+.inputarea .numbutton {
+  width: 70%;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.inputarea .opbutton {
+  flex-direction: column;
+  width: 30%;
+  height: 300px;
+}
+
+.inputarea .numbutton .btn {
+  width: 33%;
+  height: 20%;
+  margin-top: 5px;
+  background-color: #096781;
   color: white;
   font-size: 1.5rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
 }
 
-.btn:hover {
+.inputarea .opbutton .btn {
+  width: 100%;
+  height: 20%;
+  margin-top: 5px;
+  background-color: #8c6525;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.inputarea .numbutton .btn:hover
+, .inputarea .opbutton .btn:hover {
   background-color: #777;
 }
 
-.zero {
-  grid-column: span 2;
+.inputarea .numbutton .zero {
+  width:66%;
+}
+
+.inputarea .numbutton .clr {
+  background-color: #951717;
+}
+
+.inputarea .numbutton .oth {
+  background-color: #2c1891;
 }
