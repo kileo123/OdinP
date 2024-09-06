@@ -3,7 +3,7 @@ Hello Odin!
 
 ## 2024
 
-## Sep 6th
+### Sep 6th
 - Update [Odin Calculator](https://kileo123.github.io/OdinP/Web02/calc.html)
   - Percent and decimal point not working yet
   - Keyboard input not yet implemented
