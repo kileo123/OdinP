@@ -5,7 +5,7 @@ Hello Odin!
 
 ### Sep 6th
 - Update [Odin Calculator](https://kileo123.github.io/OdinP/Web02/calc.html)
-  - Percent and decimal point not working yet
+  - Percent not working yet
   - Keyboard input not yet implemented
 ### Sep 5th
 - Uploaded (UI Only) Odin Calculator
