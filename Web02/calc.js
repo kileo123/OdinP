@@ -21,13 +21,17 @@ allbtn.forEach(btn =>
             } else {
                 topdisplay.textContent = "0"
             }
-        } else if (!isNaN(btn.textContent) || btn.textContent === ".") {
+        } else if (!isNaN(btn.textContent)) {
             if (bottomdisplay.textContent == "0"){
                 bottomdisplay.textContent = btn.textContent
             } else {
                 if (bottomdisplay.textContent.length < 12) {
                     bottomdisplay.textContent += btn.textContent
                 }
+            }
+        } else if (btn.textContent === ".") {
+            if (bottomdisplay.textContent.length < 12) {
+                bottomdisplay.textContent += btn.textContent
             }
         } else {
             if (btn.textContent === "%") {
