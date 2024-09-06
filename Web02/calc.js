@@ -49,6 +49,7 @@ allbtn.forEach(btn =>
                 }
                 if (total > 999999999999) {
                     topdisplay.textContent = "E R R O R"
+                    bottomdisplay.textContent = "0"
                 } else {
                     topdisplay.textContent = total + " " + btn.textContent
                     bottomdisplay.textContent = "0"
