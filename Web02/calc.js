@@ -9,6 +9,11 @@ bottomdisplay.textContent = "0"
 
 allbtn.forEach(btn =>
     btn.addEventListener("click", () => {
+        if (topdisplay.textContent === "ERROR" && bottomdisplay.textContent === "ERROR"){
+            topdisplay.textContent = "0"
+            bottomdisplay.textContent = "0"
+            total = 0            
+        }
         if (btn.textContent === "⌫"){
             if (bottomdisplay.textContent != "0" && bottomdisplay.textContent.length > 1){
                 bottomdisplay.textContent = bottomdisplay.textContent.slice(0, bottomdisplay.textContent.length-1)
@@ -36,6 +41,13 @@ allbtn.forEach(btn =>
         } else {
             if (btn.textContent === "%") {
                 window.alert("To be implemented soon")
+            } else if (bottomdisplay.textContent === "0" && topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "X" && btn.textContent === "=") {
+                topdisplay.textContent="0 ="
+                total = 0
+            } else if (bottomdisplay.textContent === "0" && topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "÷" && btn.textContent === "=") {
+                topdisplay.textContent="ERROR"
+                bottomdisplay.textContent = "ERROR"
+                total = 0
             } else if (bottomdisplay.textContent !== "0") {
                 if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "+" || topdisplay.textContent === "0" ) {
                     total = parseFloat(topdisplay.textContent) + parseFloat(bottomdisplay.textContent)
@@ -52,8 +64,8 @@ allbtn.forEach(btn =>
                     total = total.toFixed(2)*100/100
                 }
                 if (total > 999999999999) {
-                    topdisplay.textContent = "E R R O R"
-                    bottomdisplay.textContent = "0"
+                    topdisplay.textContent = "ERROR"
+                    bottomdisplay.textContent = "ERROR"
                 } else {
                     topdisplay.textContent = total + " " + btn.textContent
                     bottomdisplay.textContent = "0"
