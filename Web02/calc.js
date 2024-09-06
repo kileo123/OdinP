@@ -1,21 +1,48 @@
-function appendToDisplay(value) {
-    document.getElementById('result').value += value;
-}
+const allbtn = document.querySelectorAll(".btn")
+const topdisplay = document.querySelector(".topdisplay");
+const bottomdisplay = document.querySelector(".bottomdisplay");
 
-function clearDisplay() {
-    document.getElementById('result').value = '';
-}
+var total = 0
 
-function calculate() {
-    let result = document.getElementById('result').value;
-    try {
-        document.getElementById('result').value = eval(result);
-    } catch (error) {
-        document.getElementById('result').value = 'Error';
-    }
-}
+topdisplay.textContent = "0"
+bottomdisplay.textContent = "0"
 
-function backspace() {
-    let display = document.getElementById('result').value;
-    document.getElementById('result').value = display.slice(0, -1);
-}
+allbtn.forEach(btn =>
+    btn.addEventListener("click", () => {
+        if (btn.textContent === "⌫"){
+            if (bottomdisplay.textContent != "0" && bottomdisplay.textContent.length > 1){
+                bottomdisplay.textContent = bottomdisplay.textContent.slice(0, bottomdisplay.textContent.length-1)
+            } else {
+                bottomdisplay.textContent = "0"
+            }
+        } else if (btn.textContent === "C"){
+            if (bottomdisplay.textContent !== "0"){
+                bottomdisplay.textContent = "0"
+            } else {
+                topdisplay.textContent = "0"
+            }
+        } else if (!isNaN(btn.textContent)) {
+            if (bottomdisplay.textContent == "0"){
+                bottomdisplay.textContent = btn.textContent
+            } else {
+                if (bottomdisplay.textContent.length < 12) {
+                    bottomdisplay.textContent += btn.textContent
+                }
+            }
+        } else {
+            if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "+" || topdisplay.textContent === "0" ) {
+                total = parseFloat(topdisplay.textContent) + parseFloat(bottomdisplay.textContent)
+            } else if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "-") {
+                total = parseFloat(topdisplay.textContent) - parseFloat(bottomdisplay.textContent)
+            } else if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "X") {
+                total = parseFloat(topdisplay.textContent) * parseFloat(bottomdisplay.textContent)
+            } else if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "÷") {
+                total = parseFloat(topdisplay.textContent) / parseFloat(bottomdisplay.textContent)
+            } else if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "=") {
+                total = 0 + parseFloat(bottomdisplay.textContent)
+            }   
+            topdisplay.textContent = total + " " + btn.textContent
+            bottomdisplay.textContent = "0"
+        }
+    })
+)
