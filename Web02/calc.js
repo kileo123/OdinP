@@ -30,7 +30,7 @@ allbtn.forEach(btn =>
                 }
             }
         } else if (btn.textContent === ".") {
-            if (bottomdisplay.textContent.length < 12) {
+            if (bottomdisplay.textContent.length < 12 && !bottomdisplay.textContent.includes(".")) {
                 bottomdisplay.textContent += btn.textContent
             }
         } else {
