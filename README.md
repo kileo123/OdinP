@@ -3,6 +3,11 @@ Hello Odin!
 
 ## 2024
 
+## Sep 6th
+- Update [Odin Calculator](https://kileo123.github.io/OdinP/Web02/calc.html)
+- -- Percent and decimal point not working yet
+### Sep 5th
+- Uploaded (UI Only) Odin Calculator
 ### Aug 26th
 - Partially finished [Etch-a-Sketch Project](https://kileo123.github.io/OdinP/Web02/eas.html)
 ### Aug 19th
