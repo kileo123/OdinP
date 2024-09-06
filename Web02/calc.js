@@ -21,7 +21,7 @@ allbtn.forEach(btn =>
             } else {
                 topdisplay.textContent = "0"
             }
-        } else if (!isNaN(btn.textContent)) {
+        } else if (!isNaN(btn.textContent) || btn.textContent === ".") {
             if (bottomdisplay.textContent == "0"){
                 bottomdisplay.textContent = btn.textContent
             } else {
@@ -30,7 +30,7 @@ allbtn.forEach(btn =>
                 }
             }
         } else {
-            if (btn.textContent === "%" || btn.textContent === ".") {
+            if (btn.textContent === "%") {
                 window.alert("To be implemented soon")
             } else if (bottomdisplay.textContent !== "0") {
                 if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "+" || topdisplay.textContent === "0" ) {
