@@ -30,19 +30,23 @@ allbtn.forEach(btn =>
                 }
             }
         } else {
-            if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "+" || topdisplay.textContent === "0" ) {
-                total = parseFloat(topdisplay.textContent) + parseFloat(bottomdisplay.textContent)
-            } else if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "-") {
-                total = parseFloat(topdisplay.textContent) - parseFloat(bottomdisplay.textContent)
-            } else if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "X") {
-                total = parseFloat(topdisplay.textContent) * parseFloat(bottomdisplay.textContent)
-            } else if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "÷") {
-                total = parseFloat(topdisplay.textContent) / parseFloat(bottomdisplay.textContent)
-            } else if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "=") {
-                total = 0 + parseFloat(bottomdisplay.textContent)
-            }   
-            topdisplay.textContent = total + " " + btn.textContent
-            bottomdisplay.textContent = "0"
+            if (btn.textContent === "%" || btn.textContent === ".") {
+                window.alert("To be implemented soon")
+            } else {
+                if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "+" || topdisplay.textContent === "0" ) {
+                    total = parseFloat(topdisplay.textContent) + parseFloat(bottomdisplay.textContent)
+                } else if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "-") {
+                    total = parseFloat(topdisplay.textContent) - parseFloat(bottomdisplay.textContent)
+                } else if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "X") {
+                    total = parseFloat(topdisplay.textContent) * parseFloat(bottomdisplay.textContent)
+                } else if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "÷") {
+                    total = parseFloat(topdisplay.textContent) / parseFloat(bottomdisplay.textContent)
+                } else if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "=") {
+                    total = 0 + parseFloat(bottomdisplay.textContent)
+                }   
+                topdisplay.textContent = total + " " + btn.textContent
+                bottomdisplay.textContent = "0"
+            }
         }
     })
 )
