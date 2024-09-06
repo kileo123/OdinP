@@ -44,8 +44,15 @@ allbtn.forEach(btn =>
                 } else if (topdisplay.textContent.substring(topdisplay.textContent.length - 1) === "=") {
                     total = 0 + parseFloat(bottomdisplay.textContent)
                 }   
-                topdisplay.textContent = total + " " + btn.textContent
-                bottomdisplay.textContent = "0"
+                if (!Number.isInteger(total)) {
+                    total = total.toFixed(2)*100/100
+                }
+                if (total > 999999999999) {
+                    topdisplay.textContent = "E R R O R"
+                } else {
+                    topdisplay.textContent = total + " " + btn.textContent
+                    bottomdisplay.textContent = "0"
+                }
             } else {
                 topdisplay.textContent = parseFloat(topdisplay.textContent) + " " + btn.textContent
             }
