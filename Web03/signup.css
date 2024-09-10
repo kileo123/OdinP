@@ -13,6 +13,8 @@
   --color3:#2c4a54; /* Button hover */
   --color4:#a4ddf1; /* Textarea hover */
   --color5:#cde8f9; /* Textarea focus */
+  --color-error: #F08080;
+  --color-valid: #89CFF0;
 }
 
 * {
@@ -156,6 +158,20 @@ html, body {
 .form-group input:hover {
   background-color: var(--color4);
   outline: none;
+}
+
+.form-group input:user-valid {
+  background-color: var(--color-valid); 
+}
+
+.form-group input:user-invalid {
+  background-color: var(--color-error); 
+}
+
+.form-group label h4 {
+  font-size: 0.8em;
+  font-style: italic;
+  color: var(--color3)
 }
 
 .error-message {
