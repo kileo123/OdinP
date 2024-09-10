@@ -33,32 +33,32 @@
       <div class="form-group">
         <label for="first-name"><p>First Name</p>
           <h4>minimum 2 character</h4>
-          <input type="text" placeholder="Loki" minlength="2" required>
+          <input type="text" id="first-name" placeholder="Loki" minlength="2" required>
         </label>
         <label for="last-name">
           <p>Last Name</p>
           <h4>minimum 2 character</h4>
-          <input type="text" placeholder="Laufeyson" minlength="2" required>
+          <input type="text" id="last-name" placeholder="Laufeyson" minlength="2" required>
         </label>
         </div>
       <div class="form-group">
         <label for="email"><p>Email</p>
           <h4>xxx@xx.xx</h4>
-          <input type="email" placeholder="Loki.Laufeyson@asgard.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+          <input type="email" id="email" placeholder="Loki.Laufeyson@asgard.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
         </label>
         <label for="phone-num"><p>Phone Number</p>
           <h4>10-12 digits</h4>
-          <input type="tel" placeholder="088812345678" pattern="[0-9]{10,11}" minlength="10" maxlength="12" required>
+          <input type="tel" id="phone-num" placeholder="088812345678" pattern="[0-9]{10,11}" minlength="10" maxlength="12" required>
         </label>
       </div>
       <div class="form-group">
         <label for="password"><p>Password</p>
           <h4>8-16character, mixed case</h4>
-          <input type="password" placeholder="Password" minlength="8" maxlength="16" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+          <input type="password" id="password" placeholder="P455word" minlength="8" maxlength="16" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
         </label>
         <label for="pass-confirm"><p>Confirm Password</p>
           <h4>8-16character, mixed case</h4>
-          <input type="password" placeholder="Password" minlength="8" maxlength="16" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+          <input type="password" id="pass-confirm" placeholder="P455word" minlength="8" maxlength="16" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
         </label>
       </div>
       <!-- <p class="error-message">* Passwords do not match</p> -->
