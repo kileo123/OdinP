@@ -3,6 +3,8 @@ Hello Odin!
 
 ## 2024
 
+### Sep 10th
+- Added [Odin Sign Up form](https://kileo123.github.io/OdinP/Web02/calc.html) (unfinished)
 ### Sep 6th
 - Update [Odin Calculator](https://kileo123.github.io/OdinP/Web02/calc.html)
   - Percent not working yet
