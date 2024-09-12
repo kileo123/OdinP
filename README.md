@@ -3,6 +3,8 @@ Hello Odin!
 
 ## 2024
 
+### Sep 12th
+- Added [Odin Dashboard](https://kileo123.github.io/OdinP/Web03/dashboard.html)
 ### Sep 10th
 - Added [Odin Sign Up form](https://kileo123.github.io/OdinP/Web03/signup.html)
 ### Sep 6th
