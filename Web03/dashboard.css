@@ -19,6 +19,7 @@
   --color2: #0D6EFD;
   --color3: #FFC107;
   --color4: #AF1763;
+  --color5: #0DCAF0;
 }
 
 * {
@@ -263,6 +264,7 @@ nav img {
 }
 
 .maindisplay .proj .projcontent h1{
+  color: var(--color5);
   font-size: 1.2em;
   font-weight: 500;
   padding: 0;
@@ -330,6 +332,7 @@ nav img {
 }
 
 .maindisplay .announcement-container .announcement-content h1{
+  color: var(--color5);
   font-size: 0.9em;
   font-weight: 400;
   margin-top: 0;
@@ -383,14 +386,15 @@ nav img {
 }
 
 .maindisplay .trending-container .trending-content .tc-id h1{
+  color: var(--color5);
   font-size: 0.9em;
-  font-weight: 300;
+  font-weight: 500;
   margin: 0;
   padding: 0;
 }
 
 .maindisplay .trending-container .trending-content .tc-id h2{
-  font-size: 0.7em;
+  font-size: 0.8em;
   font-weight: 300;
   margin: 0;
   padding-bottom: 5px;
