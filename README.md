@@ -3,6 +3,9 @@ Hello Odin!
 
 ## 2024
 
+### Sep 17th 
+- Added [Odin Library](https://kileo123.github.io/OdinP/Web03/library.html)
+  - R to change read status, E to edit entry, X to delete book
 ### Sep 12th
 - Added [Odin Dashboard](https://kileo123.github.io/OdinP/Web03/dashboard.html)
 ### Sep 10th
