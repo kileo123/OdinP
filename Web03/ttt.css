@@ -34,7 +34,7 @@ html, body {
   justify-content: center;
   align-items: center;
   height: 100dvh;
-  min-height: 800px;
+  min-height: 500px;
   grid-template-rows: 15% auto 15%;
 }
 

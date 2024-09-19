@@ -12,5 +12,4 @@ const tttBoard = (() => {
     cellElement.id = `cell${index+1}`
     board.append(cellElement)
   })
-
 })()
