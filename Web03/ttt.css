@@ -36,6 +36,53 @@ body {
   align-items: center;
 }
 
+dialog{
+  padding: 0;
+}
+
+dialog form{
+  margin: 0;
+  width: 80dvw;
+  max-width: 400px;
+  height: 50dvh;
+  background-color: #151719;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+
+dialog form label{
+  padding: 0;
+  margin: 0;
+  display: grid;
+  align-self: self-end;
+}
+
+dialog form input{
+  border: none;
+  border-bottom: 2px solid;
+  background-color: transparent;
+  min-width: 250px;
+  height: 50px;
+}
+
+dialog form input:focus, dialog form input:hover{
+  background-color: var(--color1);
+  outline: none;
+}
+
+dialog form button{
+  background-color: var(--color2);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  min-width: 250px;
+  height: 50px;
+}
+
 .container{
   display: grid;
   justify-content: center;
@@ -45,13 +92,13 @@ body {
   grid-template-rows: 25% 50% 25%;
 }
 
-#header, #board, #footer{
+#topheader, #board, #bottomfooter{
   display: grid;
   justify-items: center;
   padding: 20px;
 }
 
-#header{
+#topheader{
   background-color: var(--color2);;
   align-self: start;
 }
@@ -67,6 +114,31 @@ body {
   height: auto;
   max-height: 70vh;
   aspect-ratio: 1/1;
+}
+
+#board .startbutton {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-row: 2;
+  grid-column: 1/4;
+  width: 100%;
+}
+
+#board button {
+  border: 1px solid var(--color3);
+  background-color: var(--color1);
+  width: 30dvw;
+  max-width: 400px;
+  height: 100%;
+}
+
+#board button:hover {
+  background-color: var(--color1a);
+}
+
+#board button:active {
+  font-size: 2em;
 }
 
 #board .cells {
@@ -129,7 +201,7 @@ body {
   margin-top: -15%;
 }
 
-#footer{
+#bottomfooter{
   border: 1px solid var(--color2);
   grid-auto-flow: column;
   align-self: end;
