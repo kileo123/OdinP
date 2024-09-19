@@ -10,7 +10,7 @@ Hello Odin!
 - Updated Odin Tic-Tac-Toe
   - Currently basic gameplay only, will add:
     - [ ] Check who wins
-    - [x] Player name input
+    - [x] Player name input (Sep 20th)
     - [ ] Reset after game finished
     - [ ] Score keeping
 ### Sep 18th 
