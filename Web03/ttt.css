@@ -8,6 +8,7 @@
 
 :root{
   --color1: #191c24;
+  --color1a: #14161b;
   --color2: #0D6EFD;
   --color3: #FFC107;
   --color4: #AF1763;
@@ -39,22 +40,19 @@ body {
   display: grid;
   justify-content: center;
   align-items: center;
-  height: 98dvh;
+  height: 95dvh;
   min-height: 500px;
-  grid-template-rows: 15% auto 15%;
+  grid-template-rows: 25% 50% 25%;
 }
 
 #header, #board, #footer{
   display: grid;
   justify-items: center;
   padding: 20px;
-  /* width: 100dvw;
-  height: 100%; */
 }
 
 #header{
-  background-color:  var(--color2);;
-  margin-top: 20px;
+  background-color: var(--color2);;
   align-self: start;
 }
 
@@ -80,11 +78,15 @@ body {
   align-items: center;
 }
 
-#board #cell2, #board #cell5, #board #cell8 {
+#board .cells:hover {
+  background-color: var(--color1a);
+}
+
+#board #cell-2, #board #cell-5, #board #cell-8 {
   border-left: 5px solid var(--color2);
   border-right: 5px solid var(--color2);
 }
-#board #cell4, #board #cell5, #board #cell6 {
+#board #cell-4, #board #cell-5, #board #cell-6 {
   border-top: 5px solid var(--color2);
   border-bottom: 5px solid var(--color2);
 }
@@ -95,7 +97,7 @@ body {
   max-width: 9em;
   border-radius: 50%;
   aspect-ratio: 1/1;
-  border: 15px solid blue;
+  border: 25px solid blue;
 }
 
 .cross {
@@ -127,9 +129,8 @@ body {
   margin-top: -15%;
 }
 
-
 #footer{
-  border: 1px solid yellow;
-  margin-bottom: 20px;
+  border: 1px solid var(--color2);
+  grid-auto-flow: column;
   align-self: end;
 }
