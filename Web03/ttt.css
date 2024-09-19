@@ -33,7 +33,7 @@ html, body {
   display: grid;
   justify-content: center;
   align-items: center;
-  height: 90dvh;
+  height: 98dvh;
   min-height: 500px;
   grid-template-rows: 15% auto 15%;
 }
