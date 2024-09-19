@@ -4,7 +4,7 @@ Hello Odin!
 ## 2024
 
 ### Sep 18th 
-- Added [Odin Library](https://kileo123.github.io/OdinP/Web03/ttt.html)
+- Added [Odin Tic-Tac-Toe](https://kileo123.github.io/OdinP/Web03/ttt.html)
   - Not working yet, only empty board as of now
 ### Sep 17th 
 - Added [Odin Library](https://kileo123.github.io/OdinP/Web03/library.html)
