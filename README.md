@@ -11,7 +11,7 @@ Hello Odin!
   - Currently basic gameplay only, will add:
     - [ ] Check who wins
     - [x] Player name input
-    - [ ] Reset once game end
+    - [ ] Reset after game finished
     - [ ] Score keeping
 ### Sep 18th 
 - Added [Odin Tic-Tac-Toe](https://kileo123.github.io/OdinP/Web03/ttt.html)
