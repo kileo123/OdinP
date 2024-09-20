@@ -4,15 +4,14 @@ Hello Odin!
 ## 2024
 
 ### Sep 20th
-- Updated Odin Tic-Tac-Toe
-  - Player name input now available
+- Updated Odin Tic-Tac-Toe (Fully functioning now)
 ### Sep 19th 
 - Updated Odin Tic-Tac-Toe
   - Currently basic gameplay only, will add:
-    - [ ] Check who wins
+    - [x] Check who wins (Sep 20th)
     - [x] Player name input (Sep 20th)
-    - [ ] Reset after game finished
-    - [ ] Score keeping
+    - [x] Reset button after game finished (Sep 20th)
+    - [x] Score keeping (Sep 20th)
 ### Sep 18th 
 - Added [Odin Tic-Tac-Toe](https://kileo123.github.io/OdinP/Web03/ttt.html)
   - Not working yet, only empty board as of now

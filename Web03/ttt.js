@@ -2,7 +2,7 @@ const startButton = document.getElementById("startbutton")
 startButton.addEventListener("click", () =>{
   const board = document.getElementById("board")
   board.innerHTML="" 
-  tttBoard.makeBoard()
+  game.start()
 })
 
 const tttBoard = (() => {
@@ -17,7 +17,6 @@ const tttBoard = (() => {
       cellElement.addEventListener("click", game.handleClick)
       board.append(cellElement)
     })
-    game.start()
   }
 
   return {
@@ -26,9 +25,11 @@ const tttBoard = (() => {
 })()
 
 class Player {
-  constructor (name, mark) {
+  constructor (name, mark, win, score) {
     this.name = name
     this.mark = mark
+    this.win = win
+    this.score = score
   }
 }
 
@@ -37,8 +38,8 @@ const createDialog = (() => {
   dialog.id = "getname"
   dialog.innerHTML=`
     <form method="dialog" id="getplayername">
-      <div><label for="p1label">Player 1 (circle)</label><input type="text" id="p1name" value="player 1" required></div>
-      <div><label for="p2label">Player 2 (cross)</label><input type="text" id="p2name" value="player 2" required></div>
+      <div><label for="p1label">Player 1 (circle)</label><input type="text" id="p1name" value="Player 1" required></div>
+      <div><label for="p2label">Player 2 (cross)</label><input type="text" id="p2name" value="Player 2" required></div>
       <div><button id="submitbutton" value="submit">Submit</button></div>
     </form>
   `
@@ -47,8 +48,6 @@ const createDialog = (() => {
 
 const game = (() => {
   const players = []
-  let playerTurn 
-  let gameOver
 
   const start = () => {
     const getname = document.getElementById("getname")
@@ -57,20 +56,22 @@ const game = (() => {
     playerdialog.addEventListener("submit", (event) =>{
       event.preventDefault()
       const p1name = document.getElementById("p1name").value
-      players.push(new Player(p1name, "circle"))
       const p2name = document.getElementById("p2name").value
-      players.push(new Player(p2name, "cross"))
+      players.push(new Player(p1name, "circle", false, 0))
+      players.push(new Player(p2name, "cross", false, 0))
       getname.close()
-      console.log(players[0].name)
-      console.log(players[1].name)
-    })
-    
-    playerTurn = 0
-    gameOver = false
+      const footer = document.getElementById("bottomfooter")
+      footer.textContent = `${players[0].name} start first`
+      })
+    tttBoard.makeBoard()
   }
 
   const handleClick = (e) => {
+    console.log("handling click")
+
     let filled=0
+    let turn=0
+    
     const allCells = document.querySelectorAll(".cells")
     allCells.forEach((_, index) => {
       if(allCells[index].firstChild != null) {
@@ -78,20 +79,82 @@ const game = (() => {
       }
     })
     turn=filled%2
-    console.log(`filled cells = ${filled}`)
-    console.log(`turn = ${turn}`)
+
     const play = document.createElement("div")
     play.classList.add(players[turn].mark)
     e.target.append(play)
     e.target.removeEventListener("click", handleClick)
     
+    filled++
+    turn=filled%2
+    console.log(`filled cells = ${filled}`)
+    checkWin()
+    console.log(players[0])
+    console.log(players[1])
     const footer = document.getElementById("bottomfooter")
-    footer.textContent = `${players[turn].name} turn now`
+    if (filled < 9 && players[0].win == false && players[1].win == false )  {
+      footer.textContent = `${players[turn].name} turn now`
+    } else {
+      if(players[0].win == false && players[1].win == false){
+        footer.innerHTML = `
+          <span>IT'S A TIE ! ${players[0].score} - ${players[1].score}</span>
+          <span><button id="replaybutton">Play Again</button></span>
+        `
+        playAgain()
+      }
+    }
+  }
+
+  const checkWin = () => {
+    console.log("checking winner")
+
+    const allCells = document.querySelectorAll(".cells")
+    const winningCombos = [[0,1,2], [3,4,5], [6,7,8],[0,3,6], [1,4,7], [2,5,8],[0,4,8], [2,4,6]]
+  
+    const footer = document.getElementById("bottomfooter")
+    winningCombos.forEach(array => {
+      const circleWins = array.every(cell => allCells[cell].firstChild?.classList.contains("circle"))
+      const crossWins = array.every(cell => allCells[cell].firstChild?.classList.contains("cross"))
+      if (circleWins){
+        players[0].win = true
+        players[0].score++
+        footer.innerHTML = `
+          <span>${players[0].name} WIN, Score: ${players[0].score} - ${players[1].score}</span>
+          <span><button id="replaybutton">Play Again</button></span>
+        `
+        allCells.forEach(cell => cell.replaceWith(cell.cloneNode(true)))
+        playAgain()
+      } else if (crossWins){
+        players[1].win = true
+        players[1].score++
+        footer.innerHTML = `
+          <span>${players[1].name} WIN, Score: ${players[0].score} - ${players[1].score}</span>
+          <span><button id="replaybutton">Play Again</button></span>
+        `
+        allCells.forEach(cell => cell.replaceWith(cell.cloneNode(true)))
+        playAgain()
+      } 
+    })
+  }
+
+  function playAgain(){
+    console.log("Replay?")
+    const replayButton = document.getElementById("replaybutton")
+    replayButton.addEventListener("click", () => {
+      players[0].win = false
+      players[1].win = false
+      board.innerHTML="" 
+      tttBoard.makeBoard()
+      const footer = document.getElementById("bottomfooter")
+      footer.textContent = `${players[0].name} start first`
+    })
   }
 
   return {
     start,
-    handleClick
+    handleClick,
+    checkWin,
+    playAgain
   }
 
 })()

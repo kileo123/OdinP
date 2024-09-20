@@ -10,6 +10,7 @@
   --color1: #191c24;
   --color1a: #14161b;
   --color2: #0D6EFD;
+  --color2a: #1258c0;
   --color3: #FFC107;
   --color4: #AF1763;
   --color5: #0DCAF0;
@@ -83,6 +84,15 @@ dialog form button{
   height: 50px;
 }
 
+dialog form button:hover{
+  background-color: var(--color2a);
+}
+
+dialog form button:active{
+  background-color: var(--color2a);
+  font-size: 0.9em;
+}
+
 .container{
   display: grid;
   justify-content: center;
@@ -131,6 +141,7 @@ dialog form button{
   width: 30dvw;
   max-width: 400px;
   height: 100%;
+  font-size: 2em;
 }
 
 #board button:hover {
@@ -138,7 +149,7 @@ dialog form button{
 }
 
 #board button:active {
-  font-size: 2em;
+  font-size: 1em;
 }
 
 #board .cells {
@@ -203,6 +214,25 @@ dialog form button{
 
 #bottomfooter{
   border: 1px solid var(--color2);
+  display: grid;
   grid-auto-flow: column;
+  align-items: center;
   align-self: end;
+}
+
+#bottomfooter button {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color2);
+  height: 30px;
+  width: 100px;
+}
+
+#bottomfooter button:hover {
+  background-color: var(--color2a);
+}
+
+#bottomfooter button:active {
+  background-color: var(--color2a);
+  font-size: 0.9em;
 }
