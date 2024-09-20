@@ -67,8 +67,6 @@ const game = (() => {
   }
 
   const handleClick = (e) => {
-    console.log("handling click")
-
     let filled=0
     let turn=0
     
@@ -87,10 +85,7 @@ const game = (() => {
     
     filled++
     turn=filled%2
-    console.log(`filled cells = ${filled}`)
     checkWin()
-    console.log(players[0])
-    console.log(players[1])
     const footer = document.getElementById("bottomfooter")
     if (filled < 9 && players[0].win == false && players[1].win == false )  {
       footer.textContent = `${players[turn].name} turn now`
@@ -106,8 +101,6 @@ const game = (() => {
   }
 
   const checkWin = () => {
-    console.log("checking winner")
-
     const allCells = document.querySelectorAll(".cells")
     const winningCombos = [[0,1,2], [3,4,5], [6,7,8],[0,3,6], [1,4,7], [2,5,8],[0,4,8], [2,4,6]]
   
@@ -138,7 +131,6 @@ const game = (() => {
   }
 
   function playAgain(){
-    console.log("Replay?")
     const replayButton = document.getElementById("replaybutton")
     replayButton.addEventListener("click", () => {
       players[0].win = false
