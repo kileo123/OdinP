@@ -62,4 +62,4 @@ homeBtn.addEventListener("click", home)
 menuBtn.addEventListener("click", menu)
 aboutBtn.addEventListener("click", about)
 
-menu()
+home()
