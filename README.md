@@ -5,7 +5,7 @@ Hello Odin!
 
 
 ### Sep 23rd
-- Added [Odin Restaurant](https://kileo123.github.io/OdinP/odin-restaurant/)
+- Added [Odin Restaurant](https://kileo123.github.io/OdinP/odin-restaurant/dist)
 
 ### Sep 20th
 - Updated Odin Tic-Tac-Toe (Fully functioning now)
