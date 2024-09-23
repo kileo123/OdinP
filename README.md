@@ -3,6 +3,10 @@ Hello Odin!
 
 ## 2024
 
+
+### Sep 23rd
+- Added [Odin Restaurant](https://kileo123.github.io/OdinP/odin-restaurant/)
+
 ### Sep 20th
 - Updated Odin Tic-Tac-Toe (Fully functioning now)
 ### Sep 19th 
