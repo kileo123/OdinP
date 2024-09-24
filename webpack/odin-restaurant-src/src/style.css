@@ -272,6 +272,8 @@ nav .active {
 .modal img{
   width: 700px;
   aspect-ratio: 1/1;
+  border: 10px solid;
+  color: var(--color5);
 }
 
 .modalclose {
