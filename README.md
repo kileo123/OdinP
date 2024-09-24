@@ -3,7 +3,6 @@ Hello Odin!
 
 ## 2024
 
-
 ### Sep 23rd
 - Added [Odin Restaurant](https://kileo123.github.io/OdinP/webpack/odin-restaurant/)
 ### Sep 20th

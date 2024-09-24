@@ -245,6 +245,7 @@ nav .active {
   width: auto;
   height: 85px;
   justify-self: self-end;
+  cursor: pointer;
 }
 
 .modal {
