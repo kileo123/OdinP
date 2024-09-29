@@ -11,10 +11,33 @@ export class TODO{
   }
 }
 
+const DEFAULT_CATEGORIES = "General"
+const categories = []
+
 export function addtask() {
   console.log("========= ADD TASK =========")
   
   const todo_list = JSON.parse(localStorage.getItem("todo")) || []
+  if (todo_list.length === 0){
+    console.log("localstorage empty")
+    categories[0] = DEFAULT_CATEGORIES
+  } else {
+    console.log("localstorage exist")
+    var i = 0
+    todo_list.forEach((_, index) => {
+      if (categories.indexOf(todo_list[index].project) === -1){
+        console.log("categories does not exist yet, adding new categories")
+        console.log(todo_list[index].project)
+        categories[i] = todo_list[index].project 
+        console.log(`${categories[i]}`)
+        i++
+      } else {
+        console.log("categories exist")
+      }
+    })
+  }
+  
+  console.log(categories)
   console.log(todo_list)
 
   addTaskBtn.setAttribute("class", "active")
@@ -32,6 +55,7 @@ export function addtask() {
   const addtask_label5_priority = document.createElement("label")
   const addtask_field1_div = document.createElement("div")
   const addtask_field1_projects = document.createElement("select")
+  var addtask_field1_projects_options
   const addtask_field1_newprojects = document.createElement("button")
   const addtask_field2_title = document.createElement("input")
   const addtask_field3_description = document.createElement("textarea")
@@ -57,9 +81,15 @@ export function addtask() {
   addtask_submit.textContent = "Submit"
   addtask_submit.id = "submitTask"
   addtask_submit.type = "submit"
-
+  
   addtask_field1_div.appendChild(addtask_label1_projects)
   addtask_field1_div.appendChild(addtask_field1_newprojects)
+  categories.forEach((item) => {
+    addtask_field1_projects_options = document.createElement("option")
+    addtask_field1_projects_options.setAttribute("value", `${item}`)
+    addtask_field1_projects_options.appendChild(document.createTextNode(`${item}`))
+    addtask_field1_projects.appendChild(addtask_field1_projects_options)
+  })
   addtask_field1_div.appendChild(addtask_field1_projects)
   addtask_form.appendChild(addtask_field1_div)
   addtask_form.appendChild(addtask_label2_title)
@@ -93,6 +123,8 @@ export function addtask() {
   addtask_field1_newprojects.addEventListener("click", (e) =>{
     e.preventDefault()
     console.log("new project")
+    categories.push(prompt("Enter new Project Name", ""))
+    console.log(categories)
     addtask()
   })
 }
