@@ -41,11 +41,24 @@ button {
   background-color: transparent;
 }
 
+select, option {
+  background-color: transparent;
+}
+
+.proj_options {
+  background-color: var(--color1a);
+}
+
+textarea{
+  resize: none;
+  background-color: transparent;
+}
+
 #container {
   width: 100dvw;
   height: 100dvh;
   display: grid;
-  grid-template-columns: minmax(250px, 25%)  75%;
+  grid-template-columns: 55px auto;
 }
 
 #sidebar {
@@ -57,17 +70,18 @@ button {
 }
 
 #sidebar .userinfo{
+  width: 55px;
   display: grid;
   grid-auto-flow: column;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
 }
 
 #sidebar .userinfo img{
-  height: 50px;
+  height: 40px;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  margin: 10px 20px;
+  margin: 20px 0;
   border: 3px solid var(--color4);
 }
 
@@ -78,16 +92,22 @@ button {
 
 #navbtn {
   display: grid;
+  height: 500px;
   padding: 0 10px;
 }
 
 #navbtn button{
-  height: 40px;
+  width: 100px;
+  height: 50px;
   margin: 5px;
   background-color: transparent;
-  text-align: left;
+  text-align: center;
   border: none;
+  font-weight: 700;
   border-bottom: 1px solid var(--color4);
+  transform: rotate(-90deg);
+  translate: -40px 60px;
+  /* transform-origin: 25% 100%; */
 }
 
 #navbtn button:hover{
@@ -100,6 +120,24 @@ button {
 
 #content {
   background-color: var(--color1);
+  overflow: scroll;
+  margin-bottom: 35px;
+  padding-bottom: 5px;
+}
+
+#content .contentTitle h1{
+  font-size: 1.3em;
+  text-align: center;
+  font-weight: 900;
+  margin: 0;
+  margin-top: 40px;
+}
+
+#content .contentTitle h2{
+  font-size: 1.1em;
+  text-align: center;
+  font-weight: 700;
+  margin: 0;
 }
 
 #content #addTask{
@@ -109,7 +147,7 @@ button {
 }
 
 #content #addTaskForm{
-  width: 150%;
+  width: 100%;
   display: grid;
   align-items: baseline;
   row-gap: 20px;
@@ -124,6 +162,51 @@ button {
 
 #content #addTaskForm #projectselection_list{
   grid-column: 1/3;
+}
+
+#content .todaydiv, #content .alltaskdiv, #content .upcomingdiv{
+    padding: 5px 20px;
+  display: grid;
+  grid-auto-flow: row;
+}
+
+#content .categoriesdiv{
+  background-color: var(--color1a);
+  border: 2px solid var(--color1a);
+  display: grid;
+  margin: 20px 0;
+}
+
+#content .categoriesdiv h1{
+  font-size: 1.3em;
+  font-weight: 800;
+  padding-left: 20px;
+  margin: 0;
+  margin-top: 5px
+}
+
+#content .categoriesdiv .taskdiv{
+  background-color: var(--color1);
+  display: grid;
+  grid-template-columns: auto 100px 120px 100px;
+  grid-template-rows: auto auto;
+  row-gap: 5px;
+  align-items: start;
+  margin: 10px 0;
+  padding: 10px 30px;
+}
+
+#content .categoriesdiv .taskdiv p{
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+#content .categoriesdiv .taskdiv .description{
+  grid-column: 1 / span 4;
+  text-align: justify;
+  text-justify: inter-word;
+  white-space: pre-wrap;
 }
 
 #footer {
