@@ -1,4 +1,4 @@
-import {addTaskBtn, todayBtn, upcomingBtn, allTaskBtn, content} from "./index.js"
+import { addTaskBtn, todayBtn, upcomingBtn, allTaskBtn, content } from "./index.js"
 import { format } from "date-fns";
 
 import { loadData } from "./loaddata.js"

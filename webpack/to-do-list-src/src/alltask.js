@@ -1,8 +1,8 @@
-import {addTaskBtn, todayBtn, upcomingBtn, allTaskBtn, content} from "./index.js"
-import { format } from "date-fns";
-
+import { addTaskBtn, todayBtn, upcomingBtn, allTaskBtn, content } from "./index.js"
+import { handlebutton } from "./handlebutton.js";
 import { loadData } from "./loaddata.js"
 import { loadCategories } from "./loadcategories.js";
+import { format } from "date-fns";
 
 const todaydate = new Date()
 
@@ -65,14 +65,28 @@ export function alltask() {
             category_div[i].appendChild(category_h1[i])
             categoryTitlePrinted = true
           }
-
+          
           task_div[index] = document.createElement("div")
+          task_div[index].classList.add("taskdiv")
+          task_div[index].id = `taskno${index}`
+          if(todo_list[index].complete) {
+            task_div[index].classList.add("completed")
+          }
+          if(todo_list[index].priority === "highpriority") {
+            task_div[index].classList.add("highpriority")
+          } else if(todo_list[index].priority === "normalpriority") {
+            task_div[index].classList.add("normalpriority")
+          } else if(todo_list[index].priority === "lowpriority") {
+            task_div[index].classList.add("lowpriority")
+          }
+
           title_p[index] = document.createElement("p")
           description_span[index] = document.createElement("span")
           description_span[index].classList.add("description")
           duedate_span[index] = document.createElement("span")
           priority_span[index] = document.createElement("span")
           taskbutton_div[index] = document.createElement("div")
+          taskbutton_div[index].classList.add("taskActionButton")
           complete_btn[index] = document.createElement("button")
           complete_btn[index].classList.add("taskaction")
           complete_btn[index].id = "completebtn"
@@ -89,11 +103,11 @@ export function alltask() {
           title_p[index].innerHTML = `${todo_list[index].title}`
           description_span[index].innerHTML = `${todo_list[index].description}`
           duedate_span[index].innerHTML = `${format(todo_list[index].duedate, "MMM do")}`
-          priority_span[index].innerHTML = "Normal Priority"
+          priority_span[index].innerHTML = "Normal"
           if(todo_list[index].priority === "highpriority"){
-            priority_span[index].innerHTML = "High Priority"
+            priority_span[index].innerHTML = "High"
           } else if (todo_list[index].priority === "lowpriority"){
-            priority_span[index].innerHTML = "Low Priority"
+            priority_span[index].innerHTML = "Low"
           }
           complete_btn[index].innerHTML = "C"
           edit_btn[index].innerHTML = "E"
@@ -107,7 +121,6 @@ export function alltask() {
           taskbutton_div[index].appendChild(delete_btn[index])
           task_div[index].appendChild(taskbutton_div[index])
           task_div[index].appendChild(description_span[index])
-          task_div[index].classList.add("taskdiv")
           category_div[i].appendChild(task_div[index])
 
           alltask_div.appendChild(category_div[i])
@@ -116,13 +129,22 @@ export function alltask() {
     });
   })
   content.appendChild(alltask_div)
+  handlebutton()
 
-  delete_btn.forEach(delbtn => {
-    delbtn.addEventListener("click", (e) =>{
-      console.log(e.target.dataset.index)
-      todo_list.splice(e.target.dataset.index, 1)
-      localStorage.setItem("todo", JSON.stringify(todo_list))
-      alltask()
-    })
-  })
+  // delete_btn.forEach(delbtn => {
+  //   delbtn.addEventListener("click", (e) =>{
+  //     todo_list.splice(e.target.dataset.index, 1)
+  //     localStorage.setItem("todo", JSON.stringify(todo_list))
+  //     alltask()
+  //   })
+  // })
+
+  // complete_btn.forEach(cbtn => {
+  //   cbtn.addEventListener("click", (e) =>{
+  //     document.getElementById(`taskno${e.target.dataset.index}`).classList.toggle("completed")
+  //     todo_list[e.target.dataset.index].completed()
+  //     localStorage.setItem("todo", JSON.stringify(todo_list))
+  //   })
+  // })
+
 }

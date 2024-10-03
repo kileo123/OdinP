@@ -12,7 +12,7 @@ export function loadData() {
 
   if (localData.length > 0 ){
     localData.forEach((data, index) => {
-      const todo = new TODO(data.category, data.title, data.description, data.duedate, data.priority)
+      const todo = new TODO(data.category, data.title, data.description, data.duedate, data.priority, data.complete)
       todo_list[index] = todo
       console.log("todo_list added")
       if (todo_list[index].title === "" && todo_list[index].description === "" && todo_list[index].duedate === "" && todo_list[index].priority === ""){

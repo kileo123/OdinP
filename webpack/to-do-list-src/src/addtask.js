@@ -127,7 +127,8 @@ export function addtask() {
       addtask_field2_title.value, 
       addtask_field3_description.value, 
       addtask_field4_duedate.value,
-      priority
+      priority,
+      false
     ))
     localStorage.setItem("todo", JSON.stringify(todo_list))
     today()
