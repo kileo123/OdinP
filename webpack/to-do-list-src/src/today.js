@@ -1,7 +1,9 @@
 import {addTaskBtn, todayBtn, upcomingBtn, allTaskBtn, content} from "./index.js"
 import { format } from "date-fns";
 
-const categories = []
+import { loadData } from "./loaddata.js"
+import { loadCategories } from "./loadcategories.js";
+
 const todaydate = new Date()
 
 export function today() {
@@ -10,30 +12,17 @@ export function today() {
   upcomingBtn.removeAttribute("class", "active")
   allTaskBtn.removeAttribute("class", "active")
   content.innerHTML = `
-    <div class="contentTitle">
-    <h1>TODAY's Task</h1>
-    <h2>${format(todaydate, "eeee, MMMM do yyyy")}</h2>
-    </div>
+  <div class="contentTitle">
+  <h1>TODAY's Task</h1>
+  <h2>${format(todaydate, "eeee, MMMM do yyyy")}</h2>
+  </div>
   `
-
-  const todo_list = JSON.parse(localStorage.getItem("todo")) || []
-  if (todo_list.length === 0){
-    console.log("localstorage empty")
-  } else {
-    console.log("localstorage exist")
-    var i = 0
-    todo_list.forEach((_, index) => {
-      if (categories.indexOf(todo_list[index].project) === -1){
-        categories[i] = todo_list[index].project 
-        console.log(`${categories[i]}`)
-        i++
-      }
-    })
-  }
-
+  const todo_list = loadData()
+  const categories = loadCategories()
+  
   const today_div = document.createElement("div")
-  const project_div = []
-  const project_h1 = []
+  const category_div = []
+  const category_h1 = []
   const task_div = []
   const title_p = []
   const description_span = []
@@ -43,9 +32,8 @@ export function today() {
   
   today_div.classList.add("todaydiv")
 
-
-  // const project_div = document.createElement("div")
-  // const project_h1 = document.createElement("h1")
+  // const category_div = document.createElement("div")
+  // const category_h1 = document.createElement("h1")
   // const task_div = document.createElement("div")
   // const title_p = document.createElement("p")
   // const description_span = document.createElement("span")
@@ -54,30 +42,30 @@ export function today() {
 
   console.log("========= TODAY =========")
   console.log(format(todaydate, "yyyy-MM-dd"))
+  console.log("todo_list From today.js")
+  console.log(todo_list)
 
-  var catalogueTitlePrinted = false
+  var categoryTitlePrinted = false
 
   categories.forEach((_, i) => {
 
-    catalogueTitlePrinted = false
+    categoryTitlePrinted = false
     
     todo_list.forEach((_, index) => {
       
-      if(categories[i] === todo_list[index].project){
+      if(categories[i] === todo_list[index].category){
         
         if ((format(todaydate, "yyyy-MM-dd")) === todo_list[index].duedate) {
           
-          if (!catalogueTitlePrinted) {
-            console.log(`${categories[i]}`)
-            project_div[i] = document.createElement("div")
-            project_h1[i] = document.createElement("h1")
-            project_h1[i].innerHTML = `${categories[i]}`
-            project_div[i].classList.add("categoriesdiv")
-            project_div[i].appendChild(project_h1[i])
-            catalogueTitlePrinted = true
+          if (!categoryTitlePrinted) {
+            category_div[i] = document.createElement("div")
+            category_h1[i] = document.createElement("h1")
+            category_h1[i].innerHTML = `${categories[i]}`
+            category_div[i].classList.add("categoriesdiv")
+            category_div[i].appendChild(category_h1[i])
+            categoryTitlePrinted = true
           }
 
-          console.log(`${todo_list[index].title}, ${todo_list[index].description}, ${todo_list[index].duedate}, ${todo_list[index].priority}`)
           task_div[index] = document.createElement("div")
           title_p[index] = document.createElement("p")
           description_span[index] = document.createElement("span")
@@ -106,9 +94,9 @@ export function today() {
           task_div[index].appendChild(taskbutton_div[index])
           task_div[index].appendChild(description_span[index])
           task_div[index].classList.add("taskdiv")
-          project_div[i].appendChild(task_div[index])
+          category_div[i].appendChild(task_div[index])
 
-          today_div.appendChild(project_div[i])
+          today_div.appendChild(category_div[i])
 
         }
       }
