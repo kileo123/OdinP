@@ -1,7 +1,9 @@
 import { addTaskBtn, todayBtn, upcomingBtn, allTaskBtn, content } from "./index.js"
-import { format } from "date-fns";
+import { format, differenceInDays } from "date-fns";
+import { handlebutton } from "./handlebutton.js";
+import { loadData } from "./loaddata.js"
+import { loadCategories } from "./loadcategories.js";
 
-const categories = []
 const todaydate = new Date()
 
 export function upcoming() {
@@ -10,105 +12,119 @@ export function upcoming() {
   upcomingBtn.setAttribute("class", "active")
   allTaskBtn.removeAttribute("class", "active")
   content.innerHTML = `
-    <div class="contentTitle">
-    <h1>UPCOMING Task</h1>
-    <h2>${format(todaydate, "eeee, MMMM do yyyy")}</h2>
-    </div>
+  <div class="contentTitle">
+  <h1>Task due within 7 days</h1>
+  <h2>${format(todaydate, "eeee, MMMM do yyyy")}</h2>
+  </div>
   `
-
-  // const todo_list = JSON.parse(localStorage.getItem("todo")) || []
-  // if (todo_list.length === 0){
-  //   // console.log("localstorage empty")
-  // } else {
-  //   // console.log("localstorage exist")
-  //   var i = 0
-  //   todo_list.forEach((_, index) => {
-  //     if (categories.indexOf(todo_list[index].project) === -1){
-  //       categories[i] = todo_list[index].project 
-  //       // console.log(`${categories[i]}`)
-  //       i++
-  //     }
-  //   })
-  // }
-
-  // const upcoming_div = document.createElement("div")
-  // const project_div = []
-  // const project_h1 = []
-  // const task_div = []
-  // const title_p = []
-  // const description_span = []
-  // const duedate_span = []
-  // const priority_span = []
-  // const taskbutton_div = []
+  const todo_list = loadData()
+  const categories = loadCategories()
   
-  // upcoming_div.classList.add("upcomingdiv")
+  const today_div = document.createElement("div")
+  const category_div = []
+  const category_h1 = []
+  const task_div = []
+  const title_p = []
+  const description_span = []
+  const duedate_span = []
+  const priority_span = []
+  const taskbutton_div = []
+  const complete_btn = []
+  const edit_btn = []
+  const delete_btn = []
+  
+  today_div.classList.add("todaydiv")
 
-  // // const project_div = document.createElement("div")
-  // // const project_h1 = document.createElement("h1")
-  // // const task_div = document.createElement("div")
-  // // const title_p = document.createElement("p")
-  // // const description_span = document.createElement("span")
-  // // const duedate_span = document.createElement("span")
-  // // const priority_span = document.createElement("span")
+  console.log("========= UPCOMING =========")
+  console.log(format(todaydate, "yyyy-MM-dd"))
+  console.log("todo_list From today.js")
+  console.log(todo_list)
 
-  // console.log("========= UPCOMING TASK =========")
-  // console.log(format(todaydate, "yyyy-MM-dd"))
+  var categoryTitlePrinted = false
 
-  // var catalogueTitlePrinted = false
+  categories.forEach((_, i) => {
 
-  // categories.forEach((_, i) => {
-
-  //   catalogueTitlePrinted = false
+    categoryTitlePrinted = false
     
-  //   todo_list.forEach((_, index) => {
-      
-  //     if(categories[i] === todo_list[index].project){
-        
-  //       if (!catalogueTitlePrinted) {
-  //         // console.log(`${categories[i]}`)
-  //         project_div[i] = document.createElement("div")
-  //         project_h1[i] = document.createElement("h1")
-  //         project_h1[i].innerHTML = `${categories[i]}`
-  //         project_div[i].classList.add("categoriesdiv")
-  //         project_div[i].appendChild(project_h1[i])
-  //         catalogueTitlePrinted = true
-  //       }
+    todo_list.forEach((_, index) => {
 
-  //       // console.log(`${todo_list[index].title}, ${todo_list[index].description}, ${todo_list[index].duedate}, ${todo_list[index].priority}`)
-  //       task_div[index] = document.createElement("div")
-  //       title_p[index] = document.createElement("p")
-  //       description_span[index] = document.createElement("span")
-  //       description_span[index].classList.add("description")
-  //       duedate_span[index] = document.createElement("span")
-  //       priority_span[index] = document.createElement("span")
-  //       taskbutton_div[index] = document.createElement("div")
-        
-  //       title_p[index].innerHTML = `${todo_list[index].title}`
-  //       description_span[index].innerHTML = `${todo_list[index].description}`
-  //       duedate_span[index].innerHTML = `${format(todo_list[index].duedate, "MMM do")}`
-  //       if(todo_list[index].priority === "highpriority"){
+      if(categories[i] === todo_list[index].category){
+        var daydiff = differenceInDays(todo_list[index].duedate, todaydate)
+        if( daydiff > 0  && daydiff <=7 )  {
 
-  //       }
-  //       priority_span[index].innerHTML = `Normal Priority`
+      //   if ((format(todaydate, "yyyy-MM-dd")) === todo_list[index].duedate) {
+          
+          if (!categoryTitlePrinted) {
+            category_div[i] = document.createElement("div")
+            category_h1[i] = document.createElement("h1")
+            category_h1[i].innerHTML = `${categories[i]}`
+            category_div[i].classList.add("categoriesdiv")
+            category_div[i].appendChild(category_h1[i])
+            categoryTitlePrinted = true
+          }
+          
+          task_div[index] = document.createElement("div")
+          task_div[index].classList.add("taskdiv")
+          task_div[index].id = `taskno${index}`
+          if(todo_list[index].complete) {
+            task_div[index].classList.add("completed")
+          }
+          if(todo_list[index].priority === "highpriority") {
+            task_div[index].classList.add("highpriority")
+          } else if(todo_list[index].priority === "normalpriority") {
+            task_div[index].classList.add("normalpriority")
+          } else if(todo_list[index].priority === "lowpriority") {
+            task_div[index].classList.add("lowpriority")
+          }
 
-  //       taskbutton_div[index].innerHTML = `
-  //         <button class="taskaction" id="completebtn" data-index="${index}">C</button>
-  //         <button class="taskaction" id="deletebtn" data-index="${index}">X</button>
-  //         <button class="taskaction" id="editbtn" data-index="${index}">E</button>
-  //       `
-  //       task_div[index].appendChild(title_p[index])
-  //       task_div[index].appendChild(duedate_span[index])
-  //       task_div[index].appendChild(priority_span[index])
+          title_p[index] = document.createElement("p")
+          description_span[index] = document.createElement("span")
+          description_span[index].classList.add("description")
+          duedate_span[index] = document.createElement("span")
+          priority_span[index] = document.createElement("span")
+          taskbutton_div[index] = document.createElement("div")
+          taskbutton_div[index].classList.add("taskActionButton")
+          complete_btn[index] = document.createElement("button")
+          complete_btn[index].classList.add("taskaction")
+          complete_btn[index].id = "completebtn"
+          complete_btn[index].setAttribute("data-index", index)
+          edit_btn[index] = document.createElement("button")
+          edit_btn[index].classList.add("taskaction")
+          edit_btn[index].id = "editbtn"
+          edit_btn[index].setAttribute("data-index", index)
+          delete_btn[index] = document.createElement("button")
+          delete_btn[index].classList.add("taskaction")
+          delete_btn[index].id = "deletebtn"
+          delete_btn[index].setAttribute("data-index", index)
 
-  //       task_div[index].appendChild(taskbutton_div[index])
-  //       task_div[index].appendChild(description_span[index])
-  //       task_div[index].classList.add("taskdiv")
-  //       project_div[i].appendChild(task_div[index])
+          title_p[index].innerHTML = `${todo_list[index].title}`
+          description_span[index].innerHTML = `${todo_list[index].description}`
+          duedate_span[index].innerHTML = `${format(todo_list[index].duedate, "MMM do")}`
+          priority_span[index].innerHTML = "Normal"
+          if(todo_list[index].priority === "highpriority"){
+            priority_span[index].innerHTML = "High"
+          } else if (todo_list[index].priority === "lowpriority"){
+            priority_span[index].innerHTML = "Low"
+          }
+          complete_btn[index].innerHTML = "C"
+          edit_btn[index].innerHTML = "E"
+          delete_btn[index].innerHTML = "X"
 
-  //       upcoming_div.appendChild(project_div[i])
+          task_div[index].appendChild(title_p[index])
+          task_div[index].appendChild(duedate_span[index])
+          task_div[index].appendChild(priority_span[index])
+          taskbutton_div[index].appendChild(complete_btn[index])
+          taskbutton_div[index].appendChild(edit_btn[index])
+          taskbutton_div[index].appendChild(delete_btn[index])
+          task_div[index].appendChild(taskbutton_div[index])
+          task_div[index].appendChild(description_span[index])
+          category_div[i].appendChild(task_div[index])
 
-  //     }
-  //   });
-  // })
-  // content.appendChild(upcoming_div)
+          today_div.appendChild(category_div[i])
+        }
+      }
+    });
+  })
+  content.appendChild(today_div)
+  handlebutton("upcoming")
 }
