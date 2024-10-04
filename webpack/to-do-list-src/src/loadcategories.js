@@ -1,7 +1,5 @@
 export function loadCategories() {
 
-  console.log("======== LOAD CATEGORIES ========")
-
   const DEFAULT_CATEGORY = "General"
   const categories = []
   const localData = JSON.parse(localStorage.getItem("todo")) || []
@@ -17,5 +15,7 @@ export function loadCategories() {
       }
     })
   }    
+
   return categories
+  
 }

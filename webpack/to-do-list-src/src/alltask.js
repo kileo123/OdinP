@@ -36,14 +36,6 @@ export function alltask() {
 
   alltask_div.classList.add("alltaskdiv")
 
-  // const category_div = document.createElement("div")
-  // const category_h1 = document.createElement("h1")
-  // const task_div = document.createElement("div")
-  // const title_p = document.createElement("p")
-  // const description_span = document.createElement("span")
-  // const duedate_span = document.createElement("span")
-  // const priority_span = document.createElement("span")
-
   console.log("========= alltask =========")
   console.log(format(todaydate, "yyyy-MM-dd"))
 
@@ -129,22 +121,5 @@ export function alltask() {
     });
   })
   content.appendChild(alltask_div)
-  handlebutton()
-
-  // delete_btn.forEach(delbtn => {
-  //   delbtn.addEventListener("click", (e) =>{
-  //     todo_list.splice(e.target.dataset.index, 1)
-  //     localStorage.setItem("todo", JSON.stringify(todo_list))
-  //     alltask()
-  //   })
-  // })
-
-  // complete_btn.forEach(cbtn => {
-  //   cbtn.addEventListener("click", (e) =>{
-  //     document.getElementById(`taskno${e.target.dataset.index}`).classList.toggle("completed")
-  //     todo_list[e.target.dataset.index].completed()
-  //     localStorage.setItem("todo", JSON.stringify(todo_list))
-  //   })
-  // })
-
+  handlebutton("alltask")
 }

@@ -45,7 +45,6 @@ select, option {
   background-color: transparent;
 }
 
-
 textarea{
   resize: none;
   background-color: transparent;
@@ -122,6 +121,17 @@ textarea{
   padding-bottom: 5px;
 }
 
+#taskdialog{
+  background-color: var(--color1);
+  width: 90dvw;
+  height: 90dvh;
+}
+  
+#taskdialog #taskform{
+  display: grid;
+  grid-auto-flow: row;
+}
+
 #content .contentTitle h1{
   font-size: 1.3em;
   text-align: center;
@@ -143,7 +153,7 @@ textarea{
   width: 100%;
 }
 
-#content #addTaskForm{
+#content #addTaskForm, #taskdialog #taskform{
   width: 100%;
   display: grid;
   align-items: baseline;
@@ -151,19 +161,24 @@ textarea{
   padding: 20px;
 }
 
-#content #addTaskForm #categoryselection_div{
+#content #addTaskForm #categoryselection_div, #taskdialog #taskform #categoryselection_div{
   display: grid;
   grid-template-columns: auto 50px;
   grid-template-rows: auto auto;
 }
 
-#content #addTaskForm #categoryselection_list{
+#content #addTaskForm #categoryselection_list, #taskdialog #taskform #categoryselection_list{
   grid-column: 1/3;
   margin-top: 10px;
 }
 
+#content textarea{
+  height: 40dvh;
+}
+
 .category_options {
   background-color: var(--color1a);
+  border: none;
 }
 
 #content .todaydiv, #content .alltaskdiv, #content .upcomingdiv{
@@ -184,7 +199,7 @@ textarea{
   font-weight: 800;
   padding-left: 20px;
   margin: 0;
-  margin-top: 5px
+  margin: 5px 0;
 }
 
 #content .categoriesdiv .taskdiv{
@@ -194,7 +209,7 @@ textarea{
   grid-template-rows: auto auto;
   row-gap: 5px;
   align-items: start;
-  margin: 10px 0;
+  margin-top: 3px;
   padding: 10px 30px;
 }
 
@@ -203,11 +218,23 @@ textarea{
 }
 
 #content .categoriesdiv .normalpriority{
-  background-color: rgba(0,0,100,50%);
+  background-color: rgba(0,0,100,40%);
+}
+
+#content .categoriesdiv .lowpriority{
+  background-color: rgba(0,100,0,25%);
 }
 
 #content .categoriesdiv .completed{
   background-color: black;
+}
+
+#content .categoriesdiv .completed *{
+  color: rgb(70, 70, 70);
+}
+
+#content .categoriesdiv .completed button{
+  color: var(--color4);
 }
 
 #content .categoriesdiv .taskdiv p{
@@ -226,6 +253,7 @@ textarea{
   text-justify: inter-word;
   white-space: pre-wrap;
 }
+
 
 #footer {
   position: absolute;
