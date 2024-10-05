@@ -3,6 +3,8 @@ Hello Odin!
 
 ## 2024
 
+### Oct 5th
+- Added [To-Do List](https://kileo123.github.io/OdinP/webpack/to-do=list/)
 ### Sep 23rd
 - Added [Odin Restaurant](https://kileo123.github.io/OdinP/webpack/odin-restaurant/)
 ### Sep 20th
