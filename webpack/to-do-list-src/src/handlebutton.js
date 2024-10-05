@@ -7,7 +7,7 @@ import { today } from "./today.js"
 const todo_list = loadData()
 
 export function handlebutton(who) {
-  console.log("Handle button")
+  // console.log("Handle button")
 
   const complete_btn = document.querySelectorAll("#completebtn")
   const edit_btn = document.querySelectorAll("#editbtn")

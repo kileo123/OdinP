@@ -43,10 +43,10 @@ export function upcoming() {
   
   today_div.classList.add("todaydiv")
 
-  console.log("========= UPCOMING =========")
-  console.log(format(todaydate, "yyyy-MM-dd"))
-  console.log("todo_list From today.js")
-  console.log(todo_list)
+  // console.log("========= UPCOMING =========")
+  // console.log(format(todaydate, "yyyy-MM-dd"))
+  // console.log("todo_list From today.js")
+  // console.log(todo_list)
 
   var categoryTitlePrinted = false
 

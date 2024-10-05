@@ -11,7 +11,7 @@ export function addtask() {
   const todo_list = loadData()
   const categories = loadCategories()
   
-  console.log("========= ADD TASK =========")
+  // console.log("========= ADD TASK =========")
 
   addTaskBtn.setAttribute("class", "active")
   todayBtn.removeAttribute("class", "active")
@@ -127,7 +127,7 @@ export function addtask() {
     } else if (addtask_field5_priority_low.checked) {
       priority = "lowpriority"
     } 
-    console.log(priority)
+    // console.log(priority)
     todo_list.push(new TODO(
       addtask_field1_category.value, 
       addtask_field2_title.value, 

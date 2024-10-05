@@ -7,7 +7,7 @@ import { today } from "./today.js";
 import { alltask } from "./alltask.js";
 
 export function displaymodal(targetID, who){
-  console.log("===== MODAL =====")
+  // console.log("===== MODAL =====")
 
   const todo_list = loadData()
   const categories = loadCategories()
@@ -76,21 +76,15 @@ export function displaymodal(targetID, who){
   submit.type = "submit"
 
   if (targetID == undefined) {
-    console.log("no targetID")
+    // console.log("no targetID")
   } else {
-    console.log(targetID)
+    // console.log(targetID)
     const cat = todo_list[targetID].category
     const ttl = todo_list[targetID].title
     const desc = todo_list[targetID].description
     const duedate = todo_list[targetID].duedate
     const prio = todo_list[targetID].priority
     const comp = todo_list[targetID].complete      
-    console.log(cat)
-    console.log(ttl)
-    console.log(desc)
-    console.log(duedate)
-    console.log(prio)
-    console.log(comp)
 
     field2_title.value = ttl
     field3_description.value = desc

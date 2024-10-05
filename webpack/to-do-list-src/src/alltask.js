@@ -45,8 +45,8 @@ export function alltask() {
 
   alltask_div.classList.add("alltaskdiv")
 
-  console.log("========= alltask =========")
-  console.log(format(todaydate, "yyyy-MM-dd"))
+  // console.log("========= alltask =========")
+  // console.log(format(todaydate, "yyyy-MM-dd"))
 
   var categoryTitlePrinted = false
 
