@@ -56,8 +56,11 @@ export function addtask() {
   addtask_field1_newcategory.id = "newcategory"
   addtask_label1_category.textContent = "Category" 
   addtask_label2_title.textContent = "Title"
+  addtask_label2_title.id = "Title_id"
   addtask_label3_description.textContent = "Description"
-  addtask_label4_duedate.textContent = "Due date"
+  addtask_label3_description.id = "Description_id"
+  addtask_label4_duedate.textContent = "Duedate"
+  addtask_label4_duedate.id = "Duedate_id"
   addtask_label5_priority.textContent = "Priority"
   addtask_label5_priority_high.textContent = "High"
   addtask_label5_priority_normal.textContent = "Normal"
@@ -86,10 +89,13 @@ export function addtask() {
   
   addtask_field1_div.appendChild(addtask_label1_category)
   addtask_field1_div.appendChild(addtask_field1_newcategory)
-  categories.forEach((item) => {
+  categories.forEach((item, i) => {
     addtask_field1_category_options = document.createElement("option")
     addtask_field1_category_options.classList.add("category_options")
     addtask_field1_category_options.setAttribute("value", `${item}`)
+    if((i+1) === categories.length){
+      addtask_field1_category_options.setAttribute("selected", "")
+    }
     addtask_field1_category_options.appendChild(document.createTextNode(`${item}`))
     addtask_field1_category.appendChild(addtask_field1_category_options)
   })

@@ -3,6 +3,10 @@ import { handlebutton } from "./handlebutton.js";
 import { loadData } from "./loaddata.js"
 import { loadCategories } from "./loadcategories.js";
 import { format } from "date-fns";
+import box_blank_svg from "./assets/images/box_blank.svg"
+import box_checked_svg from "./assets/images/box_checked.svg"
+import pen_in_a_box_svg from "./assets/images/pen_in_a_box.svg"
+import trashcan_svg from "./assets/images/trashcan.svg"
 
 const todaydate = new Date()
 
@@ -33,6 +37,11 @@ export function alltask() {
   const complete_btn = []
   const edit_btn = []
   const delete_btn = []
+  const box_blank = []
+  const box_checked = []
+  const pen_in_a_box = []
+  const trashcan = []
+  
 
   alltask_div.classList.add("alltaskdiv")
 
@@ -91,6 +100,15 @@ export function alltask() {
           delete_btn[index].classList.add("taskaction")
           delete_btn[index].id = "deletebtn"
           delete_btn[index].setAttribute("data-index", index)
+          box_blank[index] = document.createElement("img")
+          box_checked[index] = document.createElement("img")
+          pen_in_a_box[index] = document.createElement("img")
+          trashcan[index] = document.createElement("img")
+        
+          box_blank[index].src = box_blank_svg
+          box_checked[index].src = box_checked_svg
+          pen_in_a_box[index].src = pen_in_a_box_svg
+          trashcan[index].src = trashcan_svg
 
           title_p[index].innerHTML = `${todo_list[index].title}`
           description_span[index].innerHTML = `${todo_list[index].description}`
@@ -101,9 +119,13 @@ export function alltask() {
           } else if (todo_list[index].priority === "lowpriority"){
             priority_span[index].innerHTML = "Low"
           }
-          complete_btn[index].innerHTML = "C"
-          edit_btn[index].innerHTML = "E"
-          delete_btn[index].innerHTML = "X"
+          if(todo_list[index].complete){
+            complete_btn[index].appendChild(box_checked[index])
+          } else {
+            complete_btn[index].appendChild(box_blank[index])
+          }
+          edit_btn[index].appendChild(pen_in_a_box[index])
+          delete_btn[index].appendChild(trashcan[index])
 
           task_div[index].appendChild(title_p[index])
           task_div[index].appendChild(duedate_span[index])
