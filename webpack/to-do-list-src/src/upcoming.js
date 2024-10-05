@@ -58,7 +58,7 @@ export function upcoming() {
 
       if(categories[i] === todo_list[index].category){
         var daydiff = differenceInDays(todo_list[index].duedate, todaydate)
-        if( daydiff > 0  && daydiff <=7 )  {
+        if( daydiff >= 0  && daydiff <=7 )  {
 
       //   if ((format(todaydate, "yyyy-MM-dd")) === todo_list[index].duedate) {
           
