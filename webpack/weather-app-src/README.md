@@ -1,5 +1,8 @@
 [Weather App](https://kileo123.github.io/OdinP/webpack/weather-app/)
 
+Credits:
+- icon pack by [bas-dev](https://bas.dev/)
+
 ## Oct 8th 2024
 - Project started
 
