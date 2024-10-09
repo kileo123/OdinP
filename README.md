@@ -3,6 +3,13 @@ Hello Odin!
 
 ## 2024
 
+### Oct 9th
+- Updated [Weather App](https://kileo123.github.io/OdinP/webpack/weather-app/)
+  - Fully functioning now
+  - No keyboard input yet, need to tap search icon to search
+### Oct 8th
+- Added Weather App
+  - Not fully functional yet (Skeleton display only)
 ### Oct 5th
 - Added [To-Do List](https://kileo123.github.io/OdinP/webpack/to-do-list/)
   - Styling could be better
@@ -10,7 +17,8 @@ Hello Odin!
 ### Sep 23rd
 - Added [Odin Restaurant](https://kileo123.github.io/OdinP/webpack/odin-restaurant/)
 ### Sep 20th
-- Updated Odin Tic-Tac-Toe (Fully functioning now)
+- Updated [Odin Tic-Tac-Toe](https://kileo123.github.io/OdinP/JsBasic/ttt.html)
+  - Fully functioning now
 ### Sep 19th 
 - Updated Odin Tic-Tac-Toe
   - Currently basic gameplay only, will add:
@@ -19,7 +27,7 @@ Hello Odin!
     - [x] Reset button after game finished (Sep 20th)
     - [x] Score keeping (Sep 20th)
 ### Sep 18th 
-- Added [Odin Tic-Tac-Toe](https://kileo123.github.io/OdinP/JsBasic/ttt.html)
+- Added Odin Tic-Tac-Toe
   - Not working yet, only empty board as of now
 ### Sep 17th 
 - Added [Odin Library](https://kileo123.github.io/OdinP/JsBasic/library.html)
