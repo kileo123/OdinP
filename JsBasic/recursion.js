@@ -49,7 +49,7 @@ function fibsRec(maxNum){
 mergeSortBtn.addEventListener("click", () => {
   result.innerHTML="Merge sort"
   var nArr = [3, 2, 1, 13, 8, 5, 0, 1]
-  var promptText = "Enter array, separate number with comma\n"
+  var promptText = "Enter array, separate number with comma without space\n"
   promptText += "click okay or leave empty for default value\n"
   promptText += "default value: 3,2,1,13,8,5,0,1"
   var input = prompt(promptText, "3,2,1,13,8,5,0,1")
@@ -74,34 +74,20 @@ function mergeSort(arr){
   let left = arr.slice(0, arr.length / 2);
   let right = arr.slice(arr.length / 2);
 
-  if (left.length > 1) left = mergeSort(left);
-  if (right.length > 1) right = mergeSort(right);
-
-  console.log(`mergeSort left = ${left} || right = ${right}`)
-  return merge(left, right);
+  return merge(mergeSort(left), mergeSort(right));
 }
 
 function merge(left, right) {
-  const sorted = [];
+  const sorted = []
   if (left.length > 0 && right.length > 0) {
     if (left[0] < right[0]) {
       sorted.push(left.shift());
     } else {
       sorted.push(right.shift());
     }
-    console.log("sorted")
-    console.log(sorted)
     return sorted.concat(merge(left, right))
   }
 
-  if (left.length === 0){
-    console.log("right")
-    console.log(right)
-    return sorted.concat(right);
-  }
-  if (right.length === 0){
-    console.log("left")
-    console.log(left)
-    return sorted.concat(left);
-  } 
+  if (left.length === 0) return sorted.concat(right)
+  if (right.length === 0) return sorted.concat(left)
 }
