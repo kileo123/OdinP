@@ -54,11 +54,13 @@ mergeSortBtn.addEventListener("click", () => {
   promptText += "default value: 3,2,1,13,8,5,0,1"
   var input = prompt(promptText, "3,2,1,13,8,5,0,1")
   if(Boolean(input?.match(/^(?:\d+(?:,\d+)*,?)?$/))){
-    var arr = input.split(",")
-    nArr = []
-    arr.forEach(val => {
-      nArr.push(parseInt(val))
-    })
+    if (input != ""){
+      var arr = input.split(",")
+      nArr = []
+      arr.forEach(val => {
+        nArr.push(parseInt(val))
+      })
+    }
     console.log(nArr)
     result.innerHTML+=`<br>initial array: [${nArr}]`
     result.innerHTML+=`<br>sorted array: [${mergeSort(nArr)}]`
