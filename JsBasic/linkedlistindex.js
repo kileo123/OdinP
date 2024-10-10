@@ -1,6 +1,7 @@
-import { LinkedList } from "./linkedlist.js"
+import { LinkedList } from "./LinkedList.js"
 
-const list = new LinkedList();
+const content = document.getElementById("content")
+const list = new LinkedList()
 
 list.append("dog");
 list.append("cat");
@@ -10,3 +11,4 @@ list.append("snake");
 list.append("turtle");
 
 console.log(list.toString());
+content.innerHTML = list.toString()
