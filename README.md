@@ -3,6 +3,9 @@ Hello Odin!
 
 ## 2024
 
+### Oct 11th
+- Added [Linked List](https://kileo123.github.io/OdinP/JsBasic/linkedlist.html)
+  - result displayed directly in browser, more detailed info can be found in console log 
 ### Oct 10th
 - Added [Recursion](https://kileo123.github.io/OdinP/JsBasic/recursion.html)
   - result displayed directly in browser, more detailed info can be found in console log 
