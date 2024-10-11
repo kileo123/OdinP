@@ -108,17 +108,12 @@ export function LinkedList() {
     let index = 0
 
     while (currentNode !== null) {
-      if (
-        currentNode.value === value ||
-        (Array.isArray(currentNode.value) && currentNode.value.includes(value))
-      ) {
+      if (currentNode.value === value || (Array.isArray(currentNode.value) && currentNode.value.includes(value))) {
         return index
       }
-
       currentNode = currentNode.nextNode
       index++
     }
-
     return null
   }
 
