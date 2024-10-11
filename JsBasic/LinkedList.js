@@ -77,7 +77,9 @@ export function LinkedList() {
   }
 
   function pop() {
-    if (size() === 1) {
+    if (size() < 1) {
+      console.log("list empty")
+    } else if (size() === 1) {
       firstNode = null
       lastNode = null
     } else {
@@ -142,24 +144,25 @@ export function LinkedList() {
   }
 
   function insertAt(value, index) {
-    if (index < 0 || !Number.isInteger(index)) {
+    const newNode = node()
+    newNode.value = value
+    const listSize = size()
+    
+    if (index > listSize - 1 || index < 0 || !Number.isInteger(index)) {
       console.log("Invalid index.")
       return;
     }
 
-    const newNode = node()
-    newNode.value = value
-    const listSize = size()
-
     if (index === 0) {
       newNode.nextNode = at(index)
       firstNode = newNode
-    } else if (index === listSize - 1) {
-      at(index - 1).nextNode = newNode
+    } else if (index >= listSize - 1) {
+      index = listSize // put at last index
+      at(index-1).nextNode = newNode
       lastNode = newNode
     } else {
-      at(index - 1).nextNode = newNode
-      newNode.nextNode = at(index + 1)
+      newNode.nextNode = at(index)
+      at(index-1).nextNode = newNode
     }
   }
 
@@ -174,7 +177,7 @@ export function LinkedList() {
       firstNode = null
     } else if (index === 0 && listSize > 1) {
       firstNode = at(index + 1)
-    } else if (index === listSize - 1) {
+    } else if (index >= listSize - 1) {
       lastNode = at(index - 1)
       lastNode.nextNode = null
     } else {
