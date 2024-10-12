@@ -25,7 +25,7 @@ export default function LinkedList() {
         firstNode = newNode
         lastNode = newNode
       } else {
-        newNode.nextNode = firstNode;
+        newNode.nextNode = firstNode
         firstNode = newNode
       }
     },
@@ -56,18 +56,18 @@ export default function LinkedList() {
     at(index){
       // console.log(`at ${index}`)
       if (this.checkIndex(index)){
-        let current = this.head();
-        let count = 0;
+        let current = this.head()
+        let count = 0
     
         while (current) {
             if (count === index) {
-                return current;
+                return current
             }
-            count++;
-            current = current.nextNode;
+            count++
+            current = current.nextNode
         }
       } 
-      return "NOT FOUND";
+      return "NOT FOUND"
     },
     pop(){
       // console.log(`pop`)
