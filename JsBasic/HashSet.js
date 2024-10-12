@@ -1,117 +1,113 @@
-import { LinkedList } from './LinkedList.js';
+import LinkedList from "./LinkedList.js"
 
-export function HashSet() {
+export default function HashSet() {
   let hashTable = Array(16);
-
-  function hash(key) {
-    let hashCode = 0;
-
-    const primeNumber = 31;
-    for (let i = 0; i < key.length; i++) {
-      hashCode =
-        (primeNumber * hashCode + key.charCodeAt(i)) % hashTable.length;
-    }
-
-    return hashCode;
-  }
-
-  function checkHashTableGrowth() {
-    const capacity = hashTable.length;
-    const loadFactor = 0.75;
-    let entriesNumber = 0;
-
-    hashTable.forEach((bucket) => {
-      entriesNumber += bucket.size();
-    });
-
-    if (entriesNumber === capacity * loadFactor) {
-      const entriesList = keys();
-      hashTable = Array(capacity * 2);
-
-      for (const key of entriesList) {
-        set(key);
+  
+  return{
+    clear(){ hashTable = Array(hashTable.length) },
+    hash(key){
+      let hashCode = 0
+      const primeNumber = 31
+      for (let i = 0; i < key.length; i++) {
+        hashCode = (primeNumber * hashCode + key.charCodeAt(i)) % hashTable.length
       }
-    }
-  }
-
-  function set(key) {
-    checkHashTableGrowth();
-    const hashCode = hash(key);
-
-    if (hashTable[hashCode] === undefined) {
-      const bucket = LinkedList();
-      bucket.append(key);
-      hashTable[hashCode] = bucket;
-    } else {
-      const bucket = hashTable[hashCode];
-      const indexOfNodeWithSameKey = bucket.find(key);
-
-      if (indexOfNodeWithSameKey !== null) {
-        bucket.removeAt(indexOfNodeWithSameKey);
-        bucket.insertAt(key, indexOfNodeWithSameKey);
-      } else {
+      return hashCode
+    },
+    increaseSize(){
+      const capacity = hashTable.length;
+      const loadFactor = 0.75;
+      let entriesNumber = 0;
+      hashTable.forEach((bucket) => {
+        entriesNumber += bucket.size();
+      });
+      if (entriesNumber >= capacity * loadFactor) {
+        const entriesList = this.keys()
+        hashTable = Array(capacity * 2)
+        for (const entry of entriesList) {
+          this.set(entry)
+        }
+      }
+    },
+    set(key) {
+      this.increaseSize()
+      const hashCode = this.hash(key)
+      if (hashTable[hashCode] === undefined) {
+        const bucket = LinkedList();
         bucket.append(key);
-      }
-
-      hashTable[hashCode] = bucket;
-    }
-  }
-
-  function has(key) {
-    let entryIndex;
-    for (const bucket of hashTable) {
-      if (bucket !== undefined) {
-        entryIndex = bucket.find(key);
-        if (entryIndex !== null) {
-          return true;
+        hashTable[hashCode] = bucket;
+      } else {
+        const bucket = hashTable[hashCode];
+        const keyExist = bucket.find(key);
+        if (keyExist === null) {
+          bucket.append(key);
+        } else {
+          console.log("Key Already Exist")
         }
+        hashTable[hashCode] = bucket;
       }
-    }
-    return false;
-  }
-
-  function remove(key) {
-    let entryIndex;
-    for (const bucket of hashTable) {
-      if (bucket !== undefined) {
-        entryIndex = bucket.find(key);
-        if (entryIndex !== null) {
-          bucket.removeAt(entryIndex);
-
-          if (bucket.head() === null) {
-            delete hashTable[hashTable.indexOf(bucket)];
+    },
+    get(key){
+      let idx
+      for (const bucket of hashTable) {
+        if (bucket !== undefined) {
+          idx = bucket.find(key)
+          if (idx !== null) {
+            return bucket.at(idx).value[1];
           }
-
-          return true;
         }
       }
+      return null;
+    },
+    has(key){
+      let idx
+      for (const bucket of hashTable) {
+        if (bucket !== undefined) {
+          idx = bucket.find(key)
+          if (idx !== null) {
+            return true;
+          }
+        }
+      }
+      return false;
+    },
+    remove(key){
+      let idx;
+      for (const bucket of hashTable) {
+        if (bucket !== undefined) {
+          idx = bucket.find(key);
+          if (idx !== null) {
+            bucket.removeAt(idx);
+            if (bucket.head() === null) {
+              delete hashTable[hashTable.indexOf(bucket)];
+            }
+            return true;
+          }
+        }
+      }
+      return false;
+    },
+    length(){
+      let entries = 0;
+      hashTable.forEach((bucket) => {
+        for (let i = 0; i < bucket.size(); i++) {
+          entries++;
+        }
+      });
+      return entries;
+    }, 
+    keys(){
+      const keys = [];
+      hashTable.forEach((bucket) => {
+        for (let i = 0; i < bucket.size(); i++) {
+          keys.push(bucket.at(i).value);
+        }
+      });
+      return keys;
+    },
+    printTable(){
+      hashTable.forEach((bucket,i) => {
+        console.log(`${i} ${bucket.toString()}`)
+      });
     }
-    return false;
   }
-
-  function length() {
-    let entries = 0;
-    hashTable.forEach((bucket) => {
-      for (let i = 0; i < bucket.size(); i++) {
-        entries++;
-      }
-    });
-    return entries;
-  }
-
-  function clear() {
-    hashTable = Array(hashTable.length);
-  }
-
-  function keys() {
-    const keys = [];
-    hashTable.forEach((bucket) => {
-      for (let i = 0; i < bucket.size(); i++) {
-        keys.push(bucket.at(i).value);
-      }
-    });
-    return keys;
-  }
-
-  return { hash, checkHashTableGrowth, set, has, length, clear, keys, remove };
 }

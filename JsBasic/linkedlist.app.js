@@ -80,9 +80,17 @@ console.log(`\nconsole.log(list.contains("cat"))`)
 console.log(list.contains("cat"))
 content.innerHTML += `<p>list.contains("cat") :<br> ${list.contains("cat")}</p>`
 
+console.log(`\nconsole.log(list.contains("somethingelse"))`)
+console.log(list.contains("somethingelse"))
+content.innerHTML += `<p>list.contains("somethingelse") :<br> ${list.contains("somethingelse")}</p>`
+
 console.log(`\nconsole.log(list.find("snake"))`)
 console.log(list.find("snake"))
 content.innerHTML += `<p>list.find("snake") :<br> ${list.find("snake")}</p>`
+
+console.log(`\nconsole.log(list.find("somethingelse"))`)
+console.log(list.find("somethingelse"))
+content.innerHTML += `<p>list.find("somethingelse") :<br> ${list.find("somethingelse")}</p>`
 
 console.log(`\nlist.pop()`)
 list.pop()
@@ -101,11 +109,11 @@ content.innerHTML += `<p>list.removeAt(1) :<br> ${list.toString()}</p>`
 
 console.log(`\nlist.insertAt("crocodile", 99)`)
 list.insertAt("crocodile", 99)
-content.innerHTML += `<p>list.insertAt("crocodile", 99) : <br> will print "invalid index"</p>`
+content.innerHTML += `<p>list.insertAt("crocodile", 99) : <br> will print "invalid index" and return null</p>`
 
 console.log(`\nlist.removeAt(99)`)
 list.removeAt(99)
-content.innerHTML += `<p>list.removeAt(99) :<br> will print "invalid index"</p>`
+content.innerHTML += `<p>list.removeAt(99) :<br> will print "invalid index" and return null</p>`
 
 console.log(`\nlist.removeAt(0)`)
 list.removeAt(0)

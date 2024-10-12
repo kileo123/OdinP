@@ -67,7 +67,7 @@ export default function LinkedList() {
             current = current.nextNode
         }
       } 
-      return "NOT FOUND"
+      return null
     },
     pop(){
       // console.log(`pop`)
@@ -99,20 +99,26 @@ export default function LinkedList() {
       let currentNode = this.head()
       let index = 0
       while (currentNode) {
-        if (currentNode.value === value) {
-          return index
+        if (Array.isArray(currentNode.value)) {
+          if (currentNode.value[0] === value) {
+            return index
+          }
+        } else {
+          if (currentNode.value === value) {
+            return index
+          }
         }
         currentNode = currentNode.nextNode
         index++
       }
-      return "NOT FOUND"
+      return null
     },
     toString() {
       // console.log(`toString`)
       let output = ""
       let current = this.head()
       while (current) {
-        output += `( ${current.value} ) →  `
+        output += `( ${current.value} ) → `
         current = current.nextNode
       }
       output += "null"
