@@ -12,7 +12,7 @@ content.innerHTML += `<p>new list :<br> ${list.toString()}</p>`
 console.log(`\nlist.pop("anything")`)
 list.pop("anything")
 console.log(list.toString())
-content.innerHTML += `<p>list.pop("anything") :<br> will return list empty</p>`
+content.innerHTML += `<p>list.pop("anything") :<br> will print "list empty" and return null</p>`
 
 console.log(`\nlist.append("dog")`)
 list.append("dog")
@@ -101,11 +101,11 @@ content.innerHTML += `<p>list.removeAt(1) :<br> ${list.toString()}</p>`
 
 console.log(`\nlist.insertAt("crocodile", 99)`)
 list.insertAt("crocodile", 99)
-content.innerHTML += `<p>list.insertAt("crocodile", 99) : <br> will return invalid index</p>`
+content.innerHTML += `<p>list.insertAt("crocodile", 99) : <br> will print "invalid index"</p>`
 
 console.log(`\nlist.removeAt(99)`)
 list.removeAt(99)
-content.innerHTML += `<p>list.removeAt(99) :<br> will return invalid index</p>`
+content.innerHTML += `<p>list.removeAt(99) :<br> will print "invalid index"</p>`
 
 console.log(`\nlist.removeAt(0)`)
 list.removeAt(0)
