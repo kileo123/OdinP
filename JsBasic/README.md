@@ -1,4 +1,8 @@
 
+### Oct 13th
+- Added [Hash](https://kileo123.github.io/OdinP/JsBasic/hash.html)
+### Oct 11th
+- Added [LinkedList](https://kileo123.github.io/OdinP/JsBasic/linkedlist.html)
 ### Oct 10th
 - Added [Recursion](https://kileo123.github.io/OdinP/JsBasic/recursion.html)
 ### Sep 20th
