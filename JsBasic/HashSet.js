@@ -105,9 +105,12 @@ export default function HashSet() {
       return keys;
     },
     printTable(){
-      hashTable.forEach((bucket,i) => {
-        console.log(`${i} ${bucket.toString()}`)
+      const entries = [];
+      hashTable.forEach((bucket, idx) => {
+        entries.push([idx, bucket]);
+        // console.log(`${idx} : ${bucket.toString()}`)
       });
+      return entries;
     }
   }
 }

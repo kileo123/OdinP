@@ -1,200 +1,243 @@
 import HashMap from "./HashMap.js"
 import HashSet from "./HashSet.js"
 
+const content = document.getElementById("content")
 const test = new HashMap()
 const testSet = new HashSet()
+var txt = ""
+content.innerHTML = ""
 
 console.log(`test.set('apple', 'red')`)
 test.set('apple', 'red')
-console.log(test.entries())
+content.innerHTML += "test.set('apple', 'red')"
 
 console.log(`test.set('banana', 'yellow')`)
 test.set('banana', 'yellow')
-console.log(test.entries())
+content.innerHTML += "<br>test.set('banana', 'yellow')"
 
 console.log(`test.set('carrot', 'orange')`)
 test.set('carrot', 'orange')
-console.log(test.entries())
+content.innerHTML += "<br>test.set('carrot', 'orange')"
 
 console.log(`test.set('dog', 'brown')`)
 test.set('dog', 'brown')
-console.log(test.entries())
+content.innerHTML += "<br>test.set('dog', 'brown')"
 
 console.log(`test.set('elephant', 'gray')`)
 test.set('elephant', 'gray')
-console.log(test.entries())
+content.innerHTML += "<br>test.set('elephant', 'gray')"
 
 console.log(`test.set('frog', 'green')`)
 test.set('frog', 'green')
-console.log(test.entries())
+content.innerHTML += "<br>test.set('frog', 'green')"
 
 console.log(`test.set('grape', 'purple')`)
 test.set('grape', 'purple')
-console.log(test.entries())
+content.innerHTML += "<br>test.set('grape', 'purple')"
 
 console.log(`test.set('hat', 'black')`)
 test.set('hat', 'black')
-console.log(test.entries())
+content.innerHTML += "<br>test.set('hat', 'black')"
 
 console.log(`test.set('ice cream', 'white')`)
 test.set('ice cream', 'white')
-console.log(test.entries())
+content.innerHTML += "<br>test.set('ice cream', 'white')"
 
 console.log(`test.set('jacket', 'blue')`)
 test.set('jacket', 'blue')
-console.log(test.entries())
+content.innerHTML += "<br>test.set('jacket', 'blue')"
 
 console.log(`test.set('kite', 'pink')`)
 test.set('kite', 'pink')
-console.log(test.entries())
+content.innerHTML += "<br>test.set('kite', 'pink')"
 
 console.log(`test.set('lion', 'golden')`)
 test.set('lion', 'golden')
-console.log(test.entries())
+content.innerHTML += "<br>test.set('lion', 'golden')"
 
-console.log(`\nconsole.log(test.entries())`)
 console.log(test.entries())
+test.entries().forEach((e) => {
+  txt += `[${e}] `
+});
+content.innerHTML += `<p>console.log(test.entries())<br>${txt}</p>`
+txt = ""
+
+console.log("\nprint table")
+content.innerHTML += `print table<br>`
+test.printTable().forEach((e, i) => {
+  txt += `${e}<br>`
+});
+console.log(`${test.printTable()}`)
+content.innerHTML += txt
+txt = ""
+
+console.log(`\nconsole.log(test.get("kite"))`)
+console.log(test.get("kite"))
+content.innerHTML += `<p>test.get("kite")<br>${test.get("kite")}</p>`
+
+console.log(`\nconsole.log(test.has("kite"))`)
+console.log(test.has("kite"))
+content.innerHTML += `<p>test.has("kite")<br>${test.has("kite")}</p>`
 
 console.log(`\nconsole.log(test.length())`)
 console.log(test.length())
+content.innerHTML += `<p>test.length()<br>${test.length()}</p>`
 
 console.log(`\nconsole.log(test.keys())`)
 console.log(test.keys())
+test.keys().forEach((e) => {
+  txt += `< ${e} > `
+});
+content.innerHTML += `<p>test.keys()<br>${txt}</p>`
+txt = ""
 
-console.log("print table")
-console.log(test.printTable())
+console.log(`\nconsole.log(test.values())`)
+console.log(test.values())
+test.values().forEach((e) => {
+  txt += `( ${e} ) `
+});
+content.innerHTML += `<p>test.values()<br>${txt}</p>`
+txt = ""
 
-console.log("---- has ----")
-console.log(test.has("kite"))
-console.log("---- get ----")
-console.log(test.get("kite"))
+console.log(`\nconsole.log(test.entries())`)
+console.log(test.entries())
+test.entries().forEach((e) => {
+  txt += `[ ${e} ] `
+});
+content.innerHTML += `<p>test.entries()<br>${txt}</p>`
+txt = ""
 
 console.log(`\ntest.set('moon', 'silver')`)
 test.set('moon', 'silver')
+content.innerHTML += `test.set('moon', 'silver')`
+
+console.log(`\nconsole.log(test.entries())`)
 console.log(test.entries())
-console.log(test.keys())
+test.entries().forEach((e) => {
+  txt += `[ ${e} ] `
+});
+content.innerHTML += `<p>test.entries()<br>${txt}</p>`
+txt = ""
+
+console.log("\nprint table")
+content.innerHTML += `print table<br>`
+test.printTable().forEach((e, i) => {
+  txt += `${e}<br>`
+});
+console.log(`${test.printTable()}`)
+content.innerHTML += txt
+txt = ""
+
+console.log(`\ntest.remove("dog")`)
+content.innerHTML += `<p>test.remove("dog")</p>`
+test.remove("dog")
 
 console.log("print table")
-console.log(test.printTable())
+content.innerHTML += `print table<br>`
+test.printTable().forEach((e, i) => {
+  txt += `${e}<br>`
+});
+console.log(`${test.printTable()}`)
+content.innerHTML += txt
+txt = ""
 
-console.log("Again more")
-test.set('hawkeye', 'Clint Barton')
+console.log(`\ntest.clear()`)
+content.innerHTML += `<p>test.clear()</p>`
+test.clear()
+
+console.log(`\ntest.entries()`)
 console.log(test.entries())
-console.log(test.keys())
-
-console.log("Again more 2")
-test.set('wonderwoman', 'Diana Prince')
-console.log(test.entries())
-console.log(test.keys())
-
-console.log("Again more 3")
-test.set('hulk', 'Bruce Banner')
-console.log(test.entries())
-console.log(test.keys())
-
-console.log("=================================")
-console.log("Again more 4")
-test.set('blackwidow', 'Natasha Romanoff')
-console.log(test.get("blackwidow"))
-console.log(test.keys())
-console.log(test.entries())
-
-console.log("Again more 5")
-test.set('blackwidow', 'Yelena Belova')
-console.log(test.get("blackwidow"))
-console.log(test.entries())
-console.log("=================================")
-console.log(test.length())
-console.log(test.keys())
-
-console.log("Again more 6")
-test.set('superman', 'Clark Kent')
-console.log("Again more 7")
-test.set('batman', 'Bruce Wayne')
-console.log(test.length())
-console.log(test.entries())
-console.log(test.keys())
-
-console.log("remove")
-console.log(test.remove("batman"))
-console.log(test.entries())
-console.log(test.keys())
-
-console.log("print table")
-console.log(test.printTable())
-
-console.log("Again more 8")
-test.set('ironman', 'Tony Stark')
-console.log("Again more 9")
-test.set('she-hulk', 'Jennifer Walters')
-console.log("Again more 10")
-test.set('wolverine', 'Logan')
-console.log("Again more 11")
-test.set('cyclops', 'Scott Summers')
-console.log("Again more 12")
-test.set('magik', 'Ilyana Rasputin')
-console.log("Again more 13")
-test.set('wolfsbane', 'Rahne Sinclair')
-
-console.log("print table")
-console.log(test.printTable())
-
-console.log("Again more 14")
-test.set('spiderman', 'Peter Parker')
-// console.log("Again more 15")
-// test.set('juggernaut', 'Cain Marko')
-// console.log("Again more 16")
-// test.set('abomination', 'Emil Blonsky')
-// console.log("Again more 17")
-// test.set('deadpool', 'Wade Wilson')
-// console.log("Again more 18")
-// test.set('cable', 'Nathan Summers')
-// console.log("Again more 19")
-// test.set('mystique', 'Raven Darkholme')
-
-console.log("print table")
-test.printTable()
+content.innerHTML += `<p>test.entries()<br>${test.entries()}</p>`
 
 console.log("======= TEST HashSet =======")
+content.innerHTML += `<p>======= TEST HashSet =======</p>`
+
+console.log(`testSet.set("ironman")`)
 testSet.set("ironman")
+console.log(`testSet.set("she-hulk")`)
 testSet.set('she-hulk')
+console.log(`testSet.set("wolverine")`)
 testSet.set('wolverine')
+console.log(`testSet.set("cyclops")`)
 testSet.set('cyclops')
+console.log(`testSet.set("magik")`)
 testSet.set('magik')
+console.log(`testSet.set("wolfsbane")`)
 testSet.set('wolfsbane')
+console.log(`testSet.set("spiderman")`)
 testSet.set('spiderman')
+console.log(`testSet.set("juggernaut")`)
 testSet.set('juggernaut')
+console.log(`testSet.set("abomination")`)
 testSet.set('abomination')
+console.log(`testSet.set("deadpool")`)
 testSet.set('deadpool')
+console.log(`testSet.set("cable")`)
 testSet.set('cable')
+console.log(`testSet.set("mystique")`)
 testSet.set('mystique')
 
-console.log("print table")
-testSet.printTable()
+console.log("print keys")
 console.log(testSet.keys())
+console.log("print table")
+content.innerHTML += `print table<br>`
+testSet.printTable().forEach((e, i) => {
+  txt += `${e}<br>`
+});
+console.log(testSet.printTable())
+content.innerHTML += txt
+txt = ""
 
-console.log("Again more")
+console.log(`testSet.set("sabretooth")`)
 testSet.set('sabretooth')
+console.log(`testSet.set("storm")`)
 testSet.set('storm')
+console.log(`testSet.set("quicksilver")`)
 testSet.set('quicksilver')
+console.log(`testSet.set("iceman")`)
 testSet.set('iceman')
+console.log(`testSet.set("rocket")`)
 testSet.set('rocket')
+console.log(`testSet.set("starlord")`)
 testSet.set('starlord')
+console.log(`testSet.set("thanos")`)
 testSet.set('thanos')
+console.log(`testSet.set("black panther")`)
 testSet.set('black panther')
+console.log(`testSet.set("blackwidow")`)
 testSet.set('blackwidow')
+console.log(`testSet.set("captain america")`)
 testSet.set('captain america')
+console.log(`testSet.set("falcon")`)
 testSet.set('falcon')
+console.log(`testSet.set("gambit")`)
 testSet.set('gambit')
 
-console.log("print table")
-testSet.printTable()
+console.log("print keys")
 console.log(testSet.keys())
+console.log("print table")
+content.innerHTML += `<br>print table<br>`
+testSet.printTable().forEach((e, i) => {
+  txt += `${e}<br>`
+});
+console.log(testSet.printTable())
+content.innerHTML += txt
+txt = ""
 
+console.log(`testSet.set("celestial")`)
 testSet.set('celestial')
+console.log(`testSet.set("eternity")`)
 testSet.set('eternity')
+console.log(`testSet.set("infinity")`)
 testSet.set('infinity')
 
-console.log("print table")
-testSet.printTable()
+console.log("print keys")
 console.log(testSet.keys())
+console.log("print table")
+content.innerHTML += `<br>print table<br>`
+testSet.printTable().forEach((e, i) => {
+  txt += `${e}<br>`
+});
+console.log(testSet.printTable())
+content.innerHTML += txt
+txt = ""
