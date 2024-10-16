@@ -20,10 +20,10 @@ export function Tree(arr){
       if (Array.isArray(arr) && arr.every(Number.isInteger)) {
         arr = radixSortLSD([...new Set(arr)])
       } else {
-        throw new TypeError('array empty or array contains non number value.');
+        throw new TypeError('array empty or array contains non number value.')
       }
     } catch (e) {
-      console.error(e);
+      console.error(e)
     }
 
     if(arr.length === 0){
@@ -179,7 +179,7 @@ export function Tree(arr){
 
   function levelOrder(callback){
     if (!callback) {
-        throw new Error("callback required.");
+        throw new Error("callback required.")
     }
 
     const queue = [root()]
@@ -272,7 +272,7 @@ export function Tree(arr){
      }
     }
     console.log("Not Found")
-    return null;
+    return null
   }
 
   function height(node) {
