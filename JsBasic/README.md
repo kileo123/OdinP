@@ -1,4 +1,6 @@
 
+### Oct 16th
+- Added [Binary Search Tree](https://kileo123.github.io/OdinP/JsBasic/BST.html)
 ### Oct 13th
 - Added [Hash](https://kileo123.github.io/OdinP/JsBasic/hash.html)
 ### Oct 11th

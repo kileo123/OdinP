@@ -3,6 +3,9 @@ Hello Odin!
 
 ## 2024
 
+### Oct 16th
+- Added [Binary Search Tree](https://kileo123.github.io/OdinP/JsBasic/BST.html)
+  - Nothing is displayed in HTML, check console log
 ### Oct 13th
 - Added [Hash](https://kileo123.github.io/OdinP/JsBasic/hash.html)
   - result displayed directly in browser, more detailed info can be found in console log 
