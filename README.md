@@ -3,6 +3,9 @@ Hello Odin!
 
 ## 2024
 
+### Oct 18th
+- Added [Knight Travails](https://kileo123.github.io/OdinP/JsBasic/knight.html)
+  - easier to read result in HTML 
 ### Oct 16th
 - Added [Binary Search Tree](https://kileo123.github.io/OdinP/JsBasic/BST.html)
   - Nothing is displayed in HTML, check console log

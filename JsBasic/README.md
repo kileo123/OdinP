@@ -1,4 +1,6 @@
 
+### Oct 18th
+- Added [Knight Travails](https://kileo123.github.io/OdinP/JsBasic/knight.html)
 ### Oct 16th
 - Added [Binary Search Tree](https://kileo123.github.io/OdinP/JsBasic/BST.html)
 ### Oct 13th
