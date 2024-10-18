@@ -21,13 +21,23 @@ function printOut(initial, end){
     });
   }
 }
- 
+
 printOut([3,3], [4,3])
-printOut([1,1], [6,6])
-printOut([5,4], [1,0])
-printOut([0,0], [7,7])
-printOut([0,0], [7,0])
-printOut([0,0], [0,7])
-printOut([6,7], [6,0])
 printOut([8,9], [1,1])
 printOut([1,1], [9,7])
+
+content.innerHTML += `<br>===== RANDOM GENERATED COORDINATES BELOW =====<br>`
+console.log("===== RANDOM GENERATED COORDINATES BELOW =====")
+
+for(let x = 0 ; x < 5 ; x ++) {
+  var r1 = Math.floor(Math.random()*10)%8
+  var r2 = Math.floor(Math.random()*10)%8
+  var r3 = Math.floor(Math.random()*10)%8
+  var r4 = Math.floor(Math.random()*10)%8
+  if(r1 == r3 && r2 == r4){
+    x--
+  } else {
+    printOut([r1,r2], [r3,r4])
+  }
+}
+
