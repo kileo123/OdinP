@@ -1,7 +1,7 @@
 import { knightMoves } from "./knight.js"
 
 const content = document.getElementById("content")
-content.innerHTML="<p>Knight Moves</p>"
+content.innerHTML="Knight Moves<br>"
 var output
 
 function printOut(initial, end){
