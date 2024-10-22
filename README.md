@@ -4,7 +4,7 @@ Hello Odin!
 ## 2024
 
 ### Oct 22nd
-- Added [Jest Testing](https://kileo123.github.io/OdinP/TDD/01-jest)
+- Added [Jest Testing](https://github.com/kileo123/OdinP/tree/main/TDD/01-jest)
 ### Oct 18th
 - Added [Knight Travails](https://kileo123.github.io/OdinP/JsBasic/knight.html)
   - easier to read result in HTML 
