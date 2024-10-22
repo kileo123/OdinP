@@ -70,8 +70,7 @@ export function caesarCipher(str, shift){
       } 
       encoded_char.push(String.fromCharCode(c))
     }
-    const encoded = encoded_char.join("") 
-    return encoded
+    return encoded_char.join("") 
   }
 }
 
