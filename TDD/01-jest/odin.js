@@ -79,7 +79,7 @@ export function analyzeArray(arr) {
     return "Input empty or input NOT a number"
   } else {
     return {
-      average: arr.reduce((total, val) => total + val) / arr.length,
+      average: arr.reduce((total, val) => total+val)/arr.length,
       min: Math.min(...arr),
       max: Math.max(...arr),
       length: arr.length,
