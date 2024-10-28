@@ -5,6 +5,11 @@
   src: url("./fonts/gameria.ttf");
   font-weight: bold;
 }
+@font-face {
+  font-family: 'zillmu';
+  src: url("./fonts/ZillMU.ttf");
+  font-weight: normal;
+}
 
 :root{
   --color1: #012A4A;
@@ -25,7 +30,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Lato";
+  font-family: "zillmu";
   font-size: 1em;
   font-weight: 500;
   color: var(--color11);
@@ -64,6 +69,24 @@ button {
   border: 3px solid var(--color10);
   cursor: pointer;
   padding: 10px 20px;
+}
+
+.homeBtn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: fit-content;
+  height: fit-content;
+  z-index: 1;
+}
+
+.homeBtn img{
+  width: 30px;
+}
+
+.homeBtn img:hover{
+  filter: invert(0.3);
+  transition: all 0.5s ease;
 }
 
 button:hover {
@@ -112,7 +135,8 @@ h1{
 }
 
 .newGameContainer{
-  width: 50dvw;
+  /* border: 1px solid red; */
+  width: 80dvw;
   height: 50dvh;
   display: flex;
   flex-direction: column;
@@ -128,8 +152,9 @@ h1{
 }
 
 .newGameBtn{
-  width: 180px;
-  margin: 0 10px;
+  font-size: 2em;
+  width: 200px;
+  margin: 0 20px;
 }
 
 .gameBoardContainer{
@@ -217,7 +242,6 @@ h1{
   rotate: 90deg;
 }
 
-
 .grid{
   border: 1px solid black;
   height: 10%;
@@ -226,11 +250,27 @@ h1{
 }
 
 #footer {
+  font-family: "lato";
   display: grid;
   grid-auto-flow: column;
   justify-content: center;
   align-content: center;
   z-index: 9;
+}
+#footer a{
+  font-family: "lato";
+}
+#footer a:link { 
+  text-decoration: none; 
+} 
+#footer a:visited { 
+  text-decoration: none; 
+} 
+#footer a:hover { 
+  text-decoration: none; 
+} 
+#footer a:active { 
+  text-decoration: none; 
 }
 
 
