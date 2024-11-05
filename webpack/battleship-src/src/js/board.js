@@ -1,86 +1,43 @@
-const container = document.getElementById("container")
-const pvpBtn = document.getElementById("pvpBtn")
-const pvbBtn = document.getElementById("pvbBtn")
-const bvbBtn = document.getElementById("bvbBtn")
+import { content } from "../index.js"
+import { drawGameBoard } from "./drawGameBoard.js"
+import { placeShip, placeShipRandom } from "./placeShip.js"
 
-class Ship{
-  constructor(name, length){
-    this.name = name
-    this.length = length
-    this.flipped = false
-    this.hit = 0
-    this.sunk = false
-  }
-  hit(){
-    this.hit++
-  }
-  isSunk(){
-    if (this.hit >= this.length){
-      this.sunk = true
-    }
-  }
-}
-
-const GRIDSIZE = 10;
-let rotated = false
-const gameBoardContainer = document.createElement("div")
-gameBoardContainer.classList.add("gameBoardContainer")
-
-bvbBtn.addEventListener("click", () => {
-  container.innerHTML=`<h3>Bot vs Bot</h3>`
-  drawGameBoard("p1")
-  drawShipBoard("shipLibrary")
-  container.appendChild(gameBoardContainer)
-})
-
-function drawGameBoard(id){
-  const gameBoard = document.createElement("div")
-  gameBoard.classList.add("gameBoard")
-  gameBoard.id = id
-  gameBoardContainer.appendChild(gameBoard)
-
-  for (let i = 0; i < GRIDSIZE**2; i++){
-    const grid = document.createElement("div")
-    grid.classList.add("grid")
-    grid.id = i
-    gameBoard.append(grid)
+export function board(gameType) {
+  content.innerHTML=""
+  console.log(`game type: ${gameType}`)
+  switch(gameType){
+    case "pvp":
+      goPVP()
+      break
+    case "pvb":
+      goPVB()
+      break;
+    case "bvb":
+      goBVB()
+      break;
+    default:
+      console.log("switch error")
   }
 }
 
-function drawShipBoard(id){
-  const shipBoard = document.createElement("div")
-  const shipList = document.createElement("div")
-  const flipBtn = document.createElement("button")
-  const shipContainer = []
-  const ship = []
-  shipBoard.classList.add("shipBoard")
-  shipBoard.id = id
-  shipList.classList.add("shipList")
-  for (let i = 0; i<5; i++){
-    shipContainer[i] = document.createElement("div")
-    shipContainer[i].classList.add(`shipContainer`)
-    ship[i] = document.createElement("div")
-    ship[i].classList.add(`ship${i}-preview`)
-    ship[i].classList.add(`ship${i}`)
-    ship[i].setAttribute("draggable", "true")          
-    shipContainer[i].appendChild(ship[i])
-    shipList.appendChild(shipContainer[i])
-  }
-  shipBoard.appendChild(shipList)
-  flipBtn.id="flip-button"
-  flipBtn.innerText="Rotate"
-  shipBoard.appendChild(flipBtn)
-  gameBoardContainer.appendChild(shipBoard)
-
-  flipBtn.addEventListener("click", () =>{
-    rotated = !rotated
-    ship.forEach((_, i) => {
-      if (rotated) {
-        ship[i].classList.add("rotated")
-      } else {
-        ship[i].classList.remove("rotated")
-      }
-    })
-  })
+function goPVP(){
+  console.log("get ready player vs player")
+  drawGameBoard("Player 1")
+  drawGameBoard("Player 2")
 }
 
+function goPVB(){
+  console.log("get ready player, this AI is not going to hold anything back")
+  drawGameBoard("Player")
+  placeShip("Player")
+  drawGameBoard("Computer")
+  placeShipRandom("Computer")
+}
+
+function goBVB(){
+  console.log("lets find out which AI is smarter")
+  drawGameBoard("Computer 1")
+  placeShipRandom("Computer 1")
+  drawGameBoard("Computer 2")
+  placeShipRandom("Computer 2")
+}
