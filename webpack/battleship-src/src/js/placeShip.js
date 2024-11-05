@@ -11,18 +11,57 @@ const ships = [ship0, ship1, ship2, ship3, ship4]
 
 var boardID 
 
+export function placeShip(id){
+  boardID = id.replace(/\s/g, '')
+  let i = 0
+  let location = 0
+  let shipBlocks = []
+
+  const allBoardBlocks = document.querySelectorAll(`#${boardID} .grid`)
+  allBoardBlocks.forEach(block => {
+    block.addEventListener("mouseover", (e) => {
+      setHighlight(ships[i], block)
+    })
+    block.addEventListener("click", (e) => {
+      location = block.id
+      if (i<ships.length){
+        placeShipPiece()
+      } else {
+        return
+      }
+      i++
+    })
+  })
+
+  function setHighlight(ship, location){
+    console.log(location)
+    if ( location <= GRIDSIZE**2 - ship.length && location%GRIDSIZE + ship.length < GRIDSIZE) {
+      shipBlocks.push(allBoardBlocks[location + i])
+    }
+    shipBlocks.forEach(shipBlock => {
+      shipBlock.classList.add("hovering")
+      setTimeout(() => shipBlock.classList.add("hovering"), 500)
+    })
+  }
+
+  function placeShipPiece(){
+    console.log(`ship${i}`, location)
+    if ( location <= GRIDSIZE**2 - ships[i].length && location%GRIDSIZE + ships[i].length < GRIDSIZE) {
+      console.log(`ship${i} Location OK`)
+      ships[i].placed = true
+    } else {
+      console.log(`ship${i} Location NOT OK`)
+      i--
+    }
+  }
+
+}
+
 export function placeShipRandom(id){
   boardID = id.replace(/\s/g, '')
   ships.forEach((ship) => {
     ship.rotated = Math.random() < 0.5
     placeShipPieceRandom(ship)
-  })
-}
-
-export function placeShip(id){
-  boardID = id.replace(/\s/g, '')
-  ships.forEach((ship) => {
-    placeShipPiece(ship)
   })
 }
 
@@ -71,16 +110,4 @@ function placeShipPieceRandom(ship){
   } else {
     placeShipPieceRandom(ship)
   }
-}
-
-function placeShipPiece(ship){
-  console.log(ship)
-  const allBoardBlocks = document.querySelectorAll(`#${boardID} .grid`)
-  console.log(boardID)
-  console.log(ship.placed)
-  allBoardBlocks.forEach(block => {
-    block.addEventListener("click", (e) => {
-      console.log(block)
-    })
-  })
 }
