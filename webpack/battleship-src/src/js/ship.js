@@ -1,18 +1,14 @@
-export class SHIP{
-  constructor(name, length){
-    this.name = name
-    this.length = length
-    this.rotated = false
-    this.hit = 0
-    this.sunk = false
-    this.placed = false
+export default class Ship {
+  constructor(length) {
+    this.length = length;
+    this.hits = 0;
   }
-  hit(){
-    this.hit++
+
+  hit() {
+    this.hits += 1;
   }
-  isSunk(){
-    if (this.hit >= this.length){
-      this.sunk = true
-    }
+
+  isSunk() {
+    return this.hits === this.length;
   }
 }

@@ -3,6 +3,12 @@ Hello Odin!
 
 ## 2024
 
+### Nov 7th 2024
+- Live demo: [Odin Battleship](https://kileo123.github.io/OdinP/webpack/battleship/)
+  - game only with with mouse device (due to drag eventlistener, found out the hard way after most of the code are done)
+  - only Player vs Bot mode currently available
+    - not taking down the selection button since maybe one day i will implement them
+  - by far not the most favorite project for me
 ### Oct 22nd
 - Added [Jest Testing](https://github.com/kileo123/OdinP/tree/main/TDD/01-jest)
 ### Oct 18th
