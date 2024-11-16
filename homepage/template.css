@@ -26,7 +26,7 @@ img{
 
 .header{
   background: linear-gradient(163deg, #0891b2 50%,  #000000 50.1%, #FFFFFF 50.2%);
-  padding: 0 50px;
+  padding: 0 20px;
 }
 
 .headerContainer{
@@ -82,7 +82,7 @@ img{
 }
 
 .myWork{
-  padding: 0 10px;
+  padding: 0 20px;
   margin: 10px 0;
 }
 
