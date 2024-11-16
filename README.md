@@ -3,6 +3,9 @@ Hello Odin!
 
 ## 2024
 
+### Nov 16th 2024
+- Added [Homepage](https://github.com/kileo123/OdinP/homepage/template.html)
+  - just a template for now
 ### Nov 7th 2024
 - Live demo: [Odin Battleship](https://kileo123.github.io/OdinP/webpack/battleship/)
   - Game only with with mouse device (due to drag eventlistener)

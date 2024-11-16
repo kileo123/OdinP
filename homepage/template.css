@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: "Lato";
+  font-size: 1em;
+  font-weight: 500;
+  color: black;
+}
+
+html, body {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+h2{
+  font-size: 2em;
+  font-weight: 700;
+}
+
+img{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.header{
+  background: linear-gradient(163deg, #0891b2 50%,  #000000 50.1%, #FFFFFF 50.2%);
+  padding: 0 50px;
+}
+
+.headerContainer{
+  display: grid;
+  align-items: center;
+  text-align: justify;
+}
+
+.headerContainer h2{
+  font-family: "Cookie";
+  width: fit-content;
+  color: white;
+  transform: scale(1.2) translate(24dvw, 330px);
+  text-shadow: 2px 2px 4px #000000;
+  z-index: 2;
+}
+
+.headerContainer span{
+  width: fit-content;
+  text-align: center;
+  font-size: 3em;
+}
+
+.headerContainer img{
+  float: none;
+  width: 300px;
+  height: 400px;
+  transform: scale(0.9) translate(0,0);
+  margin: 0;
+}
+
+.headerContent{
+  border: none;
+  background-color: none;
+  padding: 10px;
+  margin: 0;
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+}
+
+.iconContainer{
+  margin-top: 20px;
+  text-align: center;
+  position: inherit;
+  bottom: 0;
+  left: 0;
+}
+
+.iconContainer .icon-link {
+  padding: 10px 20px;
+  font-size: 2.2em;
+}
+
+.myWork{
+  padding: 0 10px;
+  margin: 10px 0;
+}
+
+.myWorkContainer{
+  padding: 0;
+}
+
+.myWorkCardContainerRow{
+  display: flex;
+  flex-wrap: wrap;
+  flex: 100%;
+  padding: 0;
+}
+
+.myWorkCardContainerCol{
+  flex: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.project-card {
+  /* width: 100dvw; */
+  margin: 10px 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.project-image {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  font-size: 18px;
+}
+
+.project-content {
+  padding: 16px;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.project-description {
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+}
+
+.project-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 0 5px;
+}
+
+.icon-link:hover {
+  color: #555;
+}
+
+.contact{
+  background-color: #0891b2;
+  padding: 20px;
+}
+
+.contact *{
+  color: white;
+}
+
+.contact img{
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.contactContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.contactText{
+  padding: 0 20px 0 0;
+}
+
+.contactText i{
+  margin: 0 10px 0 0;
+}
+
+@media only screen and (min-width: 769px) {
+  .headerContainer h2{
+    transform: scale(3) translate(100%, 28px);
+  }
+  .headerContainer img{
+    float: left;
+    transform: scale(1.3) translate(-50px, -40px);
+    margin-right: 0;
+  }
+  .headerContent{
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 100px 0 0 100px;
+    display: inline-block;
+  }
+  .iconContainer{  
+    margin-top: 50px;
+    text-align: center;
+    position: inherit;
+    bottom: 0;
+    left: 0;
+  }
+  .myWork, .contact{
+    padding: 0 40px;
+  }
+  .contactContainer{
+    padding: 40px;
+  }
+  .myWorkCardContainerRow, .myWorkCardContainerCol{
+    padding: 0;
+  }
+  .myWorkCardContainerCol{
+    flex: 50%;
+    max-width: 50%;
+  }
+  .project-card{
+    margin: 10px;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .headerContainer{
+    text-align: left;
+    align-items: start;
+    padding: 0 25px 0 50px;
+  }
+  .headerContainer h2{
+    transform: scale(1.9) translate(48px,238px);
+  }
+  .headerContainer img{
+    float: left;
+    transform: scale(1.2, 1.2) translate(0,0);
+    margin-right: 50px;
+  }
+  .headerContent{
+    background-color: white;
+    padding: 10px 10px 10px 0;
+    margin: 0;
+    display: inline-block;
+  }
+  .iconContainer{
+    margin: 0 20px;
+    text-align: right;
+    position: relative;
+    bottom: 70px;
+  }
+  .myWork{ 
+    padding: 0 50px;
+  }
+  .myWorkContainer{
+    padding: 50px;
+  }
+  .contact{
+    padding: 50px;
+  }
+  .contactContainer{
+    padding: 0 50px;
+  }
+  .myWorkCardContainerRow, .myWorkCardContainerCol{
+    padding: 0 4px;
+  }
+  .myWorkCardContainerCol{
+    flex: 25%;
+    max-width: 25%;
+  }
+  .project-card{
+    margin: 10px;
+  }
+}
